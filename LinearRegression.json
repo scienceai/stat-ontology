@@ -1,0 +1,42 @@
+{
+    "alps" : {
+        "version" : "1.0",
+        "doc" : {
+            "href" : "http://example.org/samples/full/doc.html"
+        },
+        "descriptor" : [
+           {
+                "id" : "LinearRegression",
+                "type" : "semantic",
+                "description" : {"value" : "Linear Regression test"},
+		"href" : "//github.com/standard-analytics/Schemas/blob/master/Test.json",
+                "semantic" : [
+                    {
+			"id" : "ResSE",
+                	"type" : "semantic",
+                	"description" : {"value" : "Residual Standard Error"},
+			"href" : "http://schema.org/Float"
+		    },
+		    {
+			"id" : "R2",
+                	"type" : "semantic",
+                	"description" : {"value" : "R-squared"},
+			"href" : "http://schema.org/Float"
+                    },
+		    {
+			"id" : "AdjR2",
+                	"type" : "semantic",
+                	"description" : {"value" : "Adjusted R-squared"},
+			"href" : "http://schema.org/Float"
+                    },
+		    {
+			"id" : "F",
+                	"type" : "semantic",
+                	"description" : {"value" : "F statistic"},
+			"href" : "http://schema.org/Float"
+                    }
+                ]
+            }
+        ]
+    }
+}
