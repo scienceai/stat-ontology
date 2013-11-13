@@ -7,43 +7,50 @@
         "descriptor" : [
            {
                 "id" : "ANOVA",
-                "type" : "descriptor",
+                "type" : "semantic",
                 "description" : {"value" : "ANOVA test"},
-                "descriptor" : [
+                "semantic" : [
                     {
 			"id" : "DfMod",
-                	"type" : "descriptor",
-                	"description" : {"value" : "Number of degrees of freedom of the model"}
-                    },
+                	"type" : "semantic",
+                	"description" : {"value" : "Number of degrees of freedom of the model"},
+			"href" : "http://schema.org/Integer"
+		    },
 		    {
 			"id" : "DfRes",
-                	"type" : "descriptor",
-                	"description" : {"value" : "Number of degrees of freedom of the residuals"}
+                	"type" : "semantic",
+                	"description" : {"value" : "Number of degrees of freedom of the residuals"},
+			"href" : "http://schema.org/Integer"
                     },
 		    {
 			"id" : "SumSqMod",
-                	"type" : "descriptor",
-                	"description" : {"value" : "Sum of square differences to the mean"}
+                	"type" : "semantic",
+                	"description" : {"value" : "Sum of square differences to the mean"},
+			"href" : "http://schema.org/Float"
                     },
 		    {
 			"id" : "SumSqRes",
-                	"type" : "descriptor",
-                	"description" : {"value" : "Sum of square residuals"}
+                	"type" : "semantic",
+                	"description" : {"value" : "Sum of square residuals"},
+			"href" : "http://schema.org/Float"
                     },
 		    {
 			"id" : "MeanSqMod",
-                	"type" : "descriptor",
-                	"description" : {"value" : "Mean square difference to the mean"}
+                	"type" : "semantic",
+                	"description" : {"value" : "Mean square difference to the mean"},
+			"href" : "http://schema.org/Float"
                     },
 		    {
 			"id" : "MeanSqRes",
-                	"type" : "descriptor",
-                	"description" : {"value" : "Mean square residual"}
+                	"type" : "semantic",
+                	"description" : {"value" : "Mean square residual"},
+			"href" : "http://schema.org/Float"
                     },
 		    {
 			"id" : "F",
-                	"type" : "descriptor",
-                	"description" : {"value" : "F statistic"}
+                	"type" : "semantic",
+                	"description" : {"value" : "F statistic"},
+			"href" : "http://schema.org/Float"
                     }
                 ]
             }
