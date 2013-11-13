@@ -1,0 +1,52 @@
+{
+    "alps" : {
+        "version" : "1.0",
+        "doc" : {
+            "href" : "http://example.org/samples/full/doc.html"
+        },
+        "descriptor" : [
+           {
+                "id" : "ANOVA",
+                "type" : "descriptor",
+                "description" : {"value" : "ANOVA test"},
+                "descriptor" : [
+                    {
+			"id" : "DfMod",
+                	"type" : "descriptor",
+                	"description" : {"value" : "Number of degrees of freedom of the model"}
+                    },
+		    {
+			"id" : "DfRes",
+                	"type" : "descriptor",
+                	"description" : {"value" : "Number of degrees of freedom of the residuals"}
+                    },
+		    {
+			"id" : "SumSqMod",
+                	"type" : "descriptor",
+                	"description" : {"value" : "Sum of square differences to the mean"}
+                    },
+		    {
+			"id" : "SumSqRes",
+                	"type" : "descriptor",
+                	"description" : {"value" : "Sum of square residuals"}
+                    },
+		    {
+			"id" : "MeanSqMod",
+                	"type" : "descriptor",
+                	"description" : {"value" : "Mean square difference to the mean"}
+                    },
+		    {
+			"id" : "MeanSqRes",
+                	"type" : "descriptor",
+                	"description" : {"value" : "Mean square residual"}
+                    },
+		    {
+			"id" : "F",
+                	"type" : "descriptor",
+                	"description" : {"value" : "F statistic"}
+                    }
+                ]
+            }
+        ]
+    }
+}
