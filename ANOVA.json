@@ -9,6 +9,7 @@
                 "id" : "ANOVA",
                 "type" : "semantic",
                 "description" : {"value" : "ANOVA test"},
+		"href" : "//github.com/standard-analytics/Schemas/blob/master/Test.json",
                 "semantic" : [
                     {
 			"id" : "DfMod",
