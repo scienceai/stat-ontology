@@ -1,0 +1,23 @@
+{
+    "alps" : {
+        "version" : "1.0",
+        "doc" : {
+            "href" : "http://example.org/samples/full/doc.html"
+        },
+        "descriptor" : [
+           {
+                "id" : "Test",
+                "type" : "semantic",
+                "description" : {"value" : "Statistical test"},
+                "semantic" : [
+                    {
+			"id" : "p-value",
+                	"type" : "semantic",
+                	"description" : {"value" : "p-value of the test"},
+			"href" : "http://schema.org/Float"
+		    }
+                ]
+            }
+        ]
+    }
+}
