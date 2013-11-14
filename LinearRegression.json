@@ -37,7 +37,7 @@
                     {
 			"id" : "tTests",
                 	"type" : "semantic",
-                	"description" : {"value" : "t tests comprised in the linear models"},
+                	"description" : {"value" : "t tests comprised in the linear models  (legacy spelling; see singular form, event)"},
                 	"href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
                     }
                 ]
