@@ -14,13 +14,13 @@
 			"id" : "Ftest",
                 	"type" : "semantic",
                 	"description" : {"value" : "F test comprised in the ANOVA"},
-			"href" : "http://schema.org/Integer"
+                	"href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
 		    },
 		    {
 			"id" : "Ftests",
                 	"type" : "semantic",
                 	"description" : {"value" : "F tests comprised in the ANOVA (legacy spelling; see singular form, event)"},
-			"href" : "http://schema.org/Integer"
+                	"href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
                     }
                 ]
             }
