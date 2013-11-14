@@ -8,50 +8,19 @@
            {
                 "id" : "ANOVA",
                 "type" : "semantic",
-                "description" : {"value" : "ANOVA test"},
-		"href" : "//github.com/standard-analytics/Schemas/blob/master/Test.json",
+                "description" : {"value" : "ANOVA test"}
                 "semantic" : [
                     {
-			"id" : "DfMod",
+			"id" : "Ftest",
                 	"type" : "semantic",
-                	"description" : {"value" : "Number of degrees of freedom of the model"},
+                	"description" : {"value" : "F test comprised in the ANOVA"},
 			"href" : "http://schema.org/Integer"
 		    },
 		    {
-			"id" : "DfRes",
+			"id" : "Ftests",
                 	"type" : "semantic",
-                	"description" : {"value" : "Number of degrees of freedom of the residuals"},
+                	"description" : {"value" : "F tests comprised in the ANOVA (legacy spelling; see singular form, event)"},
 			"href" : "http://schema.org/Integer"
-                    },
-		    {
-			"id" : "SumSqMod",
-                	"type" : "semantic",
-                	"description" : {"value" : "Sum of square differences to the mean"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "SumSqRes",
-                	"type" : "semantic",
-                	"description" : {"value" : "Sum of square residuals"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "MeanSqMod",
-                	"type" : "semantic",
-                	"description" : {"value" : "Mean square difference to the mean"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "MeanSqRes",
-                	"type" : "semantic",
-                	"description" : {"value" : "Mean square residual"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "F",
-                	"type" : "semantic",
-                	"description" : {"value" : "F statistic"},
-			"href" : "http://schema.org/Float"
                     }
                 ]
             }
