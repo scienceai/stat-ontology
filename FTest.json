@@ -1,0 +1,47 @@
+{
+    "alps" : {
+        "version" : "1.0",
+        "doc" : {
+            "href" : "http://example.org/samples/full/doc.html"
+        },
+        "descriptor" : [
+           {
+                "id" : "FTest",
+                "type" : "semantic",
+                "description" : {"value" : "F statistical test: equality of two variances."},
+                "semantic" : [
+                    {
+			"id" : "F",
+                	"type" : "semantic",
+                	"description" : {"value" : "F statistic"},
+			"href" : "http://schema.org/Float"
+		    },
+		    {
+			"id" : "dfNum",
+                	"type" : "semantic",
+                	"description" : {"value" : "number of degrees of freedom of the numerator"},
+			"href" : "http://schema.org/Integer"
+		    },
+		    {
+			"id" : "dfDenom",
+                	"type" : "semantic",
+                	"description" : {"value" : "number of degrees of freedom of the denominator"},
+			"href" : "http://schema.org/Integer"
+		    },
+		    {
+			"id" : "p-value",
+                	"type" : "semantic",
+                	"description" : {"value" : "p-value of the test"},
+			"href" : "http://schema.org/Float"
+		    },
+		    {
+			"id" : "descriptor",
+                	"type" : "semantic",
+                	"description" : {"value" : "descriptor"},
+			"href" : "http://schema.org/Text"
+		    }
+                ]
+            }
+        ]
+    }
+}
