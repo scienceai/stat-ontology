@@ -8,49 +8,37 @@
            {
                 "id" : "LinearModel",
                 "type" : "semantic",
-                "description" : {"value" : "Linear Model"}
+                "description" : {"value" : "Linear Model fit"},
                 "semantic" : [
+		    {
+			"id" : "R2",
+                	"type" : "semantic",
+                	"description" : {"value" : "R-squared"},
+			"href" : "http://schema.org/Float"
+                    },
+		    {
+			"id" : "AdjR2",
+                	"type" : "semantic",
+                	"description" : {"value" : "Adjusted R-squared"},
+			"href" : "http://schema.org/Float"
+                    },
+		    {
+			"id" : "Ftest",
+                	"type" : "semantic",
+                	"description" : {"value" : "F test for R2"},
+                	"href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
+                    },
                     {
-			"id" : "DfMod",
+			"id" : "tTest",
                 	"type" : "semantic",
-                	"description" : {"value" : "Number of degrees of freedom of the model"},
-			"href" : "http://schema.org/Integer"
-		    },
-		    {
-			"id" : "DfRes",
-                	"type" : "semantic",
-                	"description" : {"value" : "Number of degrees of freedom of the residuals"},
-			"href" : "http://schema.org/Integer"
+                	"description" : {"value" : "t test comprised in the linear model"},
+                	"href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
                     },
-		    {
-			"id" : "SumSqMod",
+                    {
+			"id" : "tTests",
                 	"type" : "semantic",
-                	"description" : {"value" : "Sum of square differences to the mean"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "SumSqRes",
-                	"type" : "semantic",
-                	"description" : {"value" : "Sum of square residuals"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "MeanSqMod",
-                	"type" : "semantic",
-                	"description" : {"value" : "Mean square difference to the mean"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "MeanSqRes",
-                	"type" : "semantic",
-                	"description" : {"value" : "Mean square residual"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "F",
-                	"type" : "semantic",
-                	"description" : {"value" : "F statistic"},
-			"href" : "http://schema.org/Float"
+                	"description" : {"value" : "t tests comprised in the linear models  (legacy spelling; see singular form, event)"},
+                	"href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
                     }
                 ]
             }
