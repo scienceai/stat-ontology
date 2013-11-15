@@ -23,7 +23,7 @@
 			"href" : "http://schema.org/Integer"
 		    },
 		    {
-			"id" : "p-value",
+			"id" : "pValue",
                 	"type" : "semantic",
                 	"description" : {"value" : "p-value of the test"},
 			"href" : "http://schema.org/Float"
