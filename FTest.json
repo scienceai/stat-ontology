@@ -35,10 +35,10 @@
 			"href" : "http://schema.org/Float"
 		    },
 		    {
-			"id" : "descriptor",
+			"id" : "description",
                 	"type" : "semantic",
-                	"description" : {"value" : "descriptor"},
-			"href" : "http://schema.org/Text"
+                	"description" : {"value" : "Description of the hypothesis being tested."},
+			"href" : "http://schema.org/description"
 		    }
                 ]
             }

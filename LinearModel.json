@@ -39,7 +39,13 @@
                 	"type" : "semantic",
                 	"description" : {"value" : "t tests comprised in the linear models  (legacy spelling; see singular form, event)"},
                 	"href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
-                    }
+                    },
+		    {
+			"id" : "description",
+                	"type" : "semantic",
+                	"description" : {"value" : "Description of the hypothesis being tested."},
+			"href" : "http://schema.org/description"
+		    }
                 ]
             }
         ]

@@ -19,7 +19,7 @@
 	  {
 	    "id" : "df",
             "type" : "semantic",
-            "description" : {"value" : "number of degrees of freedom"},
+            "description" : {"value" : "Number of degrees of freedom"},
 	    "href" : "http://schema.org/Integer"
 	  },
 	  {
@@ -29,10 +29,10 @@
 	    "href" : "http://schema.org/Float"
 	  },
 	  {
-	    "id" : "descriptor",
+	    "id" : "description",
             "type" : "semantic",
-            "description" : {"value" : "descriptor"},
-	    "href" : "http://schema.org/Text"
+            "description" : {"value" : "Description of the hypothesis being tested."},
+	    "href" : "http://schema.org/description"
 	  }
         ]
       }

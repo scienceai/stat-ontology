@@ -21,7 +21,13 @@
                 	"type" : "semantic",
                 	"description" : {"value" : "F tests comprised in the ANOVA (legacy spelling; see singular form, event)"},
                 	"href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
-                    }
+                    },
+		    {
+			"id" : "description",
+            		"type" : "semantic",
+            		"description" : {"value" : "Description of the hypothesis being tested."},
+	    		"href" : "http://schema.org/description"
+	  	    }
                 ]
             }
         ]
