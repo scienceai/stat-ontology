@@ -1,41 +1,41 @@
 {
-    "alps" : {
-        "version" : "1.0",
-        "doc" : {
-            "href" : "http://example.org/samples/full/doc.html"
-        },
-        "descriptor" : [
-           {
-                "id" : "tTest",
-                "type" : "semantic",
-                "description" : {"value" : "Student t statistical test."},
-                "semantic" : [
-                    {
-			"id" : "t",
-                	"type" : "semantic",
-                	"description" : {"value" : "t statistic"},
-			"href" : "http://schema.org/Float"
-		    },
-		    {
-			"id" : "df",
-                	"type" : "semantic",
-                	"description" : {"value" : "number of degrees of freedom"},
-			"href" : "http://schema.org/Integer"
-		    },
-		    {
-			"id" : "pValue",
-                	"type" : "semantic",
-                	"description" : {"value" : "p-value of the test"},
-			"href" : "http://schema.org/Float"
-		    },
-		    {
-			"id" : "descriptor",
-                	"type" : "semantic",
-                	"description" : {"value" : "descriptor"},
-			"href" : "http://schema.org/Text"
-		    }
-                ]
-            }
+  "alps" : {
+    "version" : "1.0",
+    "doc" : {
+      "href" : "http://en.wikipedia.org/wiki/Student's_t-test"
+    },
+    "descriptor" : [
+      {
+        "id" : "tTest",
+        "type" : "semantic",
+        "description" : {"value" : "Student t statistical test."},
+        "semantic" : [
+          {
+	    "id" : "t",
+            "type" : "semantic",
+            "description" : {"value" : "t statistic"},
+	    "href" : "http://schema.org/Float"
+ 	  },
+	  {
+	    "id" : "df",
+            "type" : "semantic",
+            "description" : {"value" : "number of degrees of freedom"},
+	    "href" : "http://schema.org/Integer"
+	  },
+	  {
+	    "id" : "pValue",
+            "type" : "semantic",
+            "description" : {"value" : "p-value of the test"},
+	    "href" : "http://schema.org/Float"
+	  },
+	  {
+	    "id" : "descriptor",
+            "type" : "semantic",
+            "description" : {"value" : "descriptor"},
+	    "href" : "http://schema.org/Text"
+	  }
         ]
-    }
+      }
+    ]
+  }
 }

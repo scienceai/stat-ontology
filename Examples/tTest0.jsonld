@@ -1,0 +1,14 @@
+{
+  "@context": 
+  {
+    "@type": "https://raw.github/com/standard-analytics/Schemas/master/tTest.json",
+    "t":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#t",
+    "df":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#df",
+    "pValue":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#pValue",
+    "descriptor":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#descriptor"
+  }
+  "t": 0.34,
+  "df": 4,
+  "pValue": 0.001,
+  "descriptor": "Is blood pressure significantly different among the control group individuals than among the treatment group?"
+}
