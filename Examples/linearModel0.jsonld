@@ -1,5 +1,5 @@
 {
-  "@context":  "https://raw.github/com/standard-analytics/Schemas/master/LinearModel.json",
+  "@context":  
   {
     "linearModel": "https://raw.github/com/standard-analytics/Schemas/master/LinearModel.json",
     "r2":  "linearModel:#R2",
