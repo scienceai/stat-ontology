@@ -1,53 +1,53 @@
 {
-    "alps" : {
-        "version" : "1.0",
-        "doc" : {
-            "href" : "http://example.org/samples/full/doc.html"
-        },
-        "descriptor" : [
-           {
-                "id" : "LinearModel",
-                "type" : "semantic",
-                "description" : {"value" : "Linear Model fit"},
-                "semantic" : [
-		    {
-			"id" : "R2",
-                	"type" : "semantic",
-                	"description" : {"value" : "R-squared"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "AdjR2",
-                	"type" : "semantic",
-                	"description" : {"value" : "Adjusted R-squared"},
-			"href" : "http://schema.org/Float"
-                    },
-		    {
-			"id" : "Ftest",
-                	"type" : "semantic",
-                	"description" : {"value" : "F test for R2"},
-                	"href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
-                    },
-                    {
-			"id" : "tTest",
-                	"type" : "semantic",
-                	"description" : {"value" : "t test comprised in the linear model"},
-                	"href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
-                    },
-                    {
-			"id" : "tTests",
-                	"type" : "semantic",
-                	"description" : {"value" : "t tests comprised in the linear models  (legacy spelling; see singular form, event)"},
-                	"href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
-                    },
-		    {
-			"id" : "description",
-                	"type" : "semantic",
-                	"description" : {"value" : "Description of the hypothesis being tested."},
-			"href" : "http://schema.org/description"
-		    }
-                ]
-            }
+  "alps" : {
+    "version" : "1.0",
+    "doc" : {
+      "href" : "http://example.org/samples/full/doc.html"
+    },
+    "descriptor" : [
+      {
+        "id" : "linearModel",
+        "type" : "semantic",
+        "description" : {"value" : "Linear Model fit"},
+        "semantic" : [
+	  {
+	    "id" : "r2",
+            "type" : "semantic",
+            "description" : {"value" : "R-squared"},
+	    "href" : "http://schema.org/Float"
+          },
+ 	  {
+	    "id" : "adjR2",
+            "type" : "semantic",
+            "description" : {"value" : "Adjusted r-squared"},
+	    "href" : "http://schema.org/Float"
+          },
+	  {
+	    "id" : "fTest",
+            "type" : "semantic",
+            "description" : {"value" : "F test for r2"},
+            "href" : "//github.com/standard-analytics/Schemas/blob/master/fTest.json"
+          },
+          {
+	    "id" : "coefficient",
+            "type" : "semantic",
+            "description" : {"value" : "linear model coefficient"},
+            "href" : "//github.com/standard-analytics/Schemas/blob/master/coefficient.json"
+          },
+          {
+	    "id" : "coefficients",
+            "type" : "semantic",
+            "description" : {"value" : "linear model coefficient  (legacy spelling; see singular form, event)"},
+            "href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
+          },
+	  {
+	    "id" : "description",
+            "type" : "semantic",
+            "description" : {"value" : "Description of the hypothesis being tested."},
+	    "href" : "http://schema.org/description"
+	  }
         ]
-    }
+      }
+    ]
+  }
 }

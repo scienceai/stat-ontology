@@ -1,0 +1,16 @@
+{
+  "@context": 
+  {
+    "anova": "https://raw.github/com/standard-analytics/Schemas/master/anova.json",
+    "FTests":  "anova:#FTests",
+    "description":  "anova:#description"
+  }
+  "@type": "anova",
+  "@id": "?? IRI in data registry??",
+  "Ftests": [
+    { "F": 83.52,  "dfNum": 2,  "dfDenom":  36,  "pValue": 3.0e-14,  "descriptor": "Does feeding animals with barley, oat or wheat make a difference on animals' weight after 6 weeks?" },
+    {  "F": 17.82,  "dfNum": 3,  "dfDenom":  36,  "pValue": 2.95e-07,  "descriptor": "Do alimentary supplement make any difference on animals' weight after 6 weeks?" },
+    {  "F": 0.33,  "dfNum": 6,  "dfDenom":  36,  "pValue": 0.917,  "descriptor": "Does the interaction of the diet and alimentary supplements make any difference on animals' weight after 6 weeks?" }
+  ],
+  "description": "Factorial experiment to analyse the  impact of diet and alimentary supplement on animals' weight after 6 weeks."
+}

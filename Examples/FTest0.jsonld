@@ -1,0 +1,18 @@
+{
+  "@context": 
+  {
+    "FTest": "https://raw.github/com/standard-analytics/Schemas/master/FTest.json",
+    "F":  "FTest:#F",
+    "dfNum":  "FTest:#dfNum",
+    "dfDenom":  "FTest:#dfDenom",
+    "pValue":  "FTest:#pValue",
+    "description":  "FTest:#description"
+  }, 
+  "@type": "FTest",
+  "@id": "?? IRI in data registry??",
+  "F": 0.0938,
+  "dfNum": 9,
+  "dfDenom": 9,
+  "pValue": 0.001624,
+  "description": "Is the variance of blood pressure among individuals significantly different among the control group than among the treatment group?"
+}

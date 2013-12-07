@@ -1,0 +1,35 @@
+{
+  "@context":  "https://raw.github/com/standard-analytics/Schemas/master/LinearModel.json",
+  {
+    "linearModel": "https://raw.github/com/standard-analytics/Schemas/master/LinearModel.json",
+    "r2":  "linearModel:#R2",
+    "adjR2":  "linearModel:#AdjR2",
+    "FTest":  "linearModel:#FTest",
+    "tTest":  "linearModel:#tTest",
+    "coefficients":  "linearModel:#coefficients",
+    "name":  "linearModel:#coefficient",
+    "estimate":  "linearModel:#LMCoefficient",
+    "stdError":  "linearModel:#LMCoefficient",
+    "description":  "linearModel:#description"
+  }
+  "@type": "linearModel",
+  "@id": "?? IRI in data registry??",
+  "coefficients": [
+    { 
+      "name": "intercept", 
+      "estimate": 11.7556, 
+      "stdError": 1.0408, 
+      "tTest": { "t": 11.295,  "df": 60,  "pValue": 9.54e-6,  "descriptor": "Is the coefficient significantly non-zero?" } 
+    },
+    { 
+      "name": "tannin", 
+      "estimate": -1.12167, 
+      "stdError": 0.2186, 
+      "tTest": { "t": -5.565,  "df": 540,  "pValue": 0.000846,  "descriptor": "Is the coefficient significantly non-zero?" } 
+    }
+  ],
+  "r2": 0.8156633,
+  "adjR2": 0.7893,
+  "FTest": {  "F": 30.974,  "dfNum": 1,  "dfDenom":  7,  "pValue": 0.0008461,  "descriptor": "Is there a dependence of the response variable on the explanatory variables?" }
+  "description": "Results of the linear model growth~tannin."
+}

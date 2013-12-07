@@ -1,12 +1,15 @@
 {
   "@context": 
   {
-    "@type": "https://raw.github/com/standard-analytics/Schemas/master/tTest.json",
-    "t":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#t",
-    "df":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#df",
-    "pValue":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#pValue",
-    "description":  "https://raw.github/com/standard-analytics/Schemas/master/tTest.json#descriptor"
+    "tTest": "https://raw.github/com/standard-analytics/Schemas/master/tTest.json",
+    "t":  "tTest:#t",
+    "df":  "tTest:#df",
+    "pValue":  "tTest:#pValue",
+    "description":  "tTest:#description"
   },
+  "@type": tTest,
+  "@id": "?? IRI in data registry??",
+  "id": "???iri",
   "t": -3.873,
   "df": 18,
   "pValue": 0.001115,
