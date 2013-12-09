@@ -1,0 +1,28 @@
+{
+  "name": "iris-study-lm1",
+  "version": "0.0.0",
+  "description": "Example of linear model on iris.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/standard-analytics/ssm-tutorial-data.git"
+  },
+  "files": [
+    "data/lm1.jsonld"
+  ],
+  "keywords": [
+    "lm",
+    "Petal.Length",
+    "Petal.Width"
+  ],
+  "author": {
+    "name": "Joseph Dureau"
+  },
+  "license": "MIT",
+  "resources": [
+    {
+      "name": "lm1",
+      "path": "data/lm1.jsonld",	
+      "format": "jsonld"
+    }
+  ]
+}

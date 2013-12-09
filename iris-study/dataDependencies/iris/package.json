@@ -1,0 +1,52 @@
+{
+  "name": "iris",
+  "version": "0.0.0",
+  "description": "The classic R iris dataset",
+  "files": [
+    "data/data.csv"
+  ],
+  "keywords": [
+    "iris",
+    "tutorial",
+    "R"
+  ],
+  "author": {
+    "name": "Joseph Dureau"
+  },
+  "license": "MIT",
+  "resources": [
+    {
+      "name": "data",
+      "path": "data/data.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Index",
+            "type": "number"
+          },
+          {
+            "name": "Sepal.Length",
+            "type": "number"
+          },
+          {
+            "name": "Sepal.Width",
+            "type": "number"
+          },
+          {
+            "name": "Petal.Length",
+            "type": "number"
+          },
+          {
+            "name": "Petal.Width",
+            "type": "number"
+          },
+          {
+            "name": "Species",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
