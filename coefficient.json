@@ -1,0 +1,47 @@
+{
+  "alps" : {
+    "version" : "1.0",
+    "doc" : {
+      "href" : "http://example.org/samples/full/doc.html"
+    },
+    "descriptor" : [
+      {
+        "id" : "coefficient",
+        "type" : "semantic",
+        "description" : {"value" : "linear model coefficient"},
+        "semantic" : [
+	  {
+	    "id" : "name",
+            "type" : "semantic",
+            "description" : {"value" : "name"},
+	    "href" : "http://schema.org/name"
+          },
+ 	  {
+	    "id" : "estimate",
+            "type" : "semantic",
+            "description" : {"value" : "coefficient estimate"},
+	    "href" : "http://schema.org/Float"
+          },
+	  {
+	    "id" : "stdError",
+            "type" : "semantic",
+            "description" : {"value" : "standard error of the estimate"},
+            "href" : "http://schema.org/Float"
+          },
+          {
+	    "id" : "tTest",
+            "type" : "semantic",
+            "description" : {"value" : "t test: Is the coefficient significantly non-zero"},
+            "href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
+          },
+	  {
+	    "id" : "description",
+            "type" : "semantic",
+            "description" : {"value" : "Description of the hypothesis being tested."},
+	    "href" : "http://schema.org/description"
+	  }
+        ]
+      }
+    ]
+  }
+}
