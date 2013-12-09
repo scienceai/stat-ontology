@@ -9,7 +9,7 @@
       "url": "http://opendatacommons.org/licenses/pddl/1.0/"
     }
   ],
-  "datadependencies": [
+  "dataDependencies": [
     {
       "standard-analytics-iris-lm1": "*",
       "classic-iris-dataset": "*"
