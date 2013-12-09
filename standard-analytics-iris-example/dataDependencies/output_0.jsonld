@@ -1,0 +1,64 @@
+{
+  "name": "standard-analytics-iris-lm1",
+  "description": "Classic analysis of the iris dataset, packages à la Standard Analytics",
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "name": "Public Domain Dedication and License",
+      "version": "1.0",
+      "url": "http://opendatacommons.org/licenses/pddl/1.0/"
+    }
+  ],
+  "datadependencies": [
+    {
+      "standard-analytics-iris-lm1": "*",
+      "classic-iris-dataset": "*"
+    }
+  ],
+  "resources": [
+    {
+      "name": "lm1",
+      "@context": {
+        "linearModel": "https://raw.github/com/standard-analytics/Schemas/master/LinearModel.json",
+        "R2": "linearModel:#R2",
+        "adjR2": "linearModel:#adjR2",
+        "FTest": "linearModel:#FTest",
+        "tTest": "linearModel:#tTest",
+        "coefficients": "linearModel:#coefficients",
+        "name": "linearModel:#name",
+        "estimate": "linearModel:#estimate",
+        "stdError": "linearModel:#stdError",
+        "description": "linearModel:#description"
+      },
+      "type": "linearModel",
+      "id": "?? IRI in data registry??",
+      "response": "growth",
+      "formula": "Petal.Width",
+      "require": { "datapackage": "classic-iris-dataset", "resource": "iris" },
+      "coefficients": [
+        {
+      	  "term": "(intercept)", 
+      	  "estimate": 1.08356, 
+      	  "stdError": 0.07297, 
+      	  "tTest": { "t": 14.85,  "pValue": 0.00,  "descriptor": "Is the coefficient significantly non-zero?" } 
+        },
+        { 
+      	  "term": "Petal.Width", 
+      	  "estimate": 2.22994, 
+      	  "stdError": 0.05140, 
+      	  "tTest": { "t": 43.39,  "pValue": 0.00,  "descriptor": "Is the coefficient significantly non-zero?" } 
+        }
+      ],
+      "R2": 0.9271,
+      "adjR2": 0.9266,
+      "FTest": {
+        "F": 1882,
+        "dfNum": 1,
+        "dfDenom": 148,
+        "descriptor": "Is there a dependence of the response variable on the explanatory variables?"
+      },
+      "description": "Results of the linear model." 
+    }
+  ]
+}
+

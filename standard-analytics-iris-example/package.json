@@ -1,0 +1,90 @@
+{
+  "name": "standard-analytics-iris-study",
+  "description": "Classic analysis of the iris dataset, packages à la Standard Analytics",
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "name": "Public Domain Dedication and License",
+      "version": "1.0",
+      "url": "http://opendatacommons.org/licenses/pddl/1.0/"
+    }
+  ],
+  "datadependencies": [
+    {
+      "standard-analytics-iris-lm1": "*",
+      "classic-iris-dataset": "*"
+    }
+  ],
+  "analytics": [
+    {
+      "name": "lm0",
+      "description": "How does petal length depend on sepal width?",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/user/project.git#commit-ish"
+      },
+      "scripts": {
+        "start": "scripts/lm0.R"
+      },
+      "data": {
+        "resource": "lm0"
+      }
+    },
+    {
+      "name": "lm1",
+      "description": "How does petal length depend on petal width?",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/user/project.git#commit-ish"
+      },
+      "scripts": {
+        "start": "scripts/lm1.R"
+      },
+      "data": {
+        "datapackage": "standard-analytics-iris-lm1", "resource": "lm1"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "lm0",
+      "@context": {
+        "linearModel": "https://raw.github/com/standard-analytics/Schemas/master/linearModel.json",
+	"response": "linearModel:#response",
+	"formula": "linearModel:#formula",
+        "r2":  "linearModel:#R2",
+        "adjR2":  "linearModel:#adjR2",
+    	"FTest":  "linearModel:#FTest",
+    	"tTest":  "linearModel:#tTest",
+    	"coefficients":  "linearModel:#coefficients",
+    	"name":  "linearModel:#name",
+    	"estimate":  "linearModel:#estimate",
+    	"stdError":  "linearModel:#stdError",
+    	"description":  "linearModel:#description"
+      }
+      "@type": "linearModel",
+      "@id": "?? IRI in data registry??",
+      "response": "growth",
+      "formula": "Sepal.Width",
+      "require": { "datapackage": "classic-iris-dataset", "resource": "iris" },
+      "coefficients": [
+        { 
+      	  "term": "(intercept)", 
+      	  "estimate": 9.0632, 
+      	  "stdError": 0.9289, 
+      	  "tTest": { "t": 9.757, "df": 148, "pValue": 0.00,  "descriptor": "Is the coefficient significantly non-zero?" } 
+        },
+        { 
+      	  "term": "Sepal.Width", 
+      	  "estimate": -1.7352, 
+      	  "stdError": 0.3008, 
+      	  "tTest": { "t": -5.768, "df": 148,  "pValue": 4.51e-8,  "descriptor": "Is the coefficient significantly non-zero?" } 
+        }
+      ],
+      "R2": 0.1836,
+      "adjR2": 0.178,
+      "FTest": {  "F": 33.28,  "dfNum": 1,  "dfDenom":  148,  "pValue": 4.513e-8,  "descriptor": "Is there a dependence of the response variable on the explanatory variables?" }
+      "description": "Results of the linear model."
+    }	   
+  ]
+}

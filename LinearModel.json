@@ -11,7 +11,7 @@
         "description" : {"value" : "Linear Model fit"},
         "semantic" : [
 	  {
-	    "id" : "r2",
+	    "id" : "R2",
             "type" : "semantic",
             "description" : {"value" : "R-squared"},
 	    "href" : "http://schema.org/Float"
@@ -33,6 +33,18 @@
             "type" : "semantic",
             "description" : {"value" : "linear model coefficient"},
             "href" : "//github.com/standard-analytics/Schemas/blob/master/coefficient.json"
+          },
+	  {
+	    "id" : "response",
+            "type" : "semantic",
+            "description" : {"value" : "name of the response variable"},
+            "href" : "http://schema.org/String"
+          },
+	  {
+	    "id" : "formula",
+            "type" : "semantic",
+            "description" : {"value" : "formula of the linear model"},
+            "href" : "http://schema.org/String"
           },
           {
 	    "id" : "coefficients",
