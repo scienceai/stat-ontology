@@ -35,6 +35,11 @@
             "href" : "//github.com/standard-analytics/Schemas/blob/master/tTest.json"
           },
 	  {
+	    "id" : "contrast",
+	    "type" : "semantic",
+	    "description" : {"value" : "Vector of vectors of contrasts corresponding to the categorical variable at stake. Indexes are mapped corresponding to alphabetical order."},
+	  },
+	  {
 	    "id" : "description",
             "type" : "semantic",
             "description" : {"value" : "Description of the hypothesis being tested."},
