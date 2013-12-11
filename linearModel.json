@@ -45,13 +45,7 @@
             "type" : "semantic",
             "description" : {"value" : "F test"},
             "href" : "https://raw.github.com/standard-analytics/Schemas/master/FTest.json"
-          },
-	  {
-	    "id" : "description",
-            "type" : "semantic",
-            "description" : {"value" : "Description of the hypothesis being tested."},
-	    "href" : "http://schema.org/description"
-	  }
+          }
         ]
       }
     ]

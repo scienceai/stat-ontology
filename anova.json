@@ -33,13 +33,7 @@
             "type" : "semantic",
             "description" : {"value" : "Residuals of the complete model (H1)"},
             "href" : "https://raw.github.com/standard-analytics/Schemas/master/residuals.json"
-          },
-	  {
-	    "id" : "description",
-            "type" : "semantic",
-            "description" : {"value" : "Description of the hypothesis being tested."},
-	    "href" : "http://schema.org/description"
-	  }
+          }
         ]
       }
     ]
