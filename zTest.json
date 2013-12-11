@@ -1,0 +1,29 @@
+{
+  "alps" : {
+    "version" : "1.0",
+    "doc" : {
+      "href" : "http://en.wikipedia.org/wiki/Z-test"
+    },
+    "descriptor" : [
+      {
+        "id" : "tTest",
+        "type" : "semantic",
+        "description" : {"value" : "z statistical test."},
+        "semantic" : [
+          {
+	    "id" : "z",
+            "type" : "semantic",
+            "description" : {"value" : "z statistic"},
+	    "href" : "http://alps.io/schema.org/Float"
+ 	  },
+	  {
+	    "id" : "pValue",
+            "type" : "semantic",
+            "description" : {"value" : "p-value of the test"},
+	    "href" : "https://raw.github.com/standard-analytics/Schemas/master/pValue"
+	  }
+        ]
+      }
+    ]
+  }
+}

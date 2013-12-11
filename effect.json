@@ -1,0 +1,47 @@
+{
+  "alps" : {
+    "version" : "1.0",
+    "doc" : {
+      "href" : "http://en.wikipedia.org/wiki/Analysis_of_variance"
+    },
+    "descriptor" : [
+      {
+        "id" : "effect",
+        "type" : "semantic",
+        "description" : {"value" : "ANOVA effect"},
+        "semantic" : [
+	  {
+	    "id" : "term",
+            "type" : "semantic",
+            "description" : {"value" : "Corresponding term of the model"},
+	    "href" : "http://alps.io/schema.org/Text"
+          },
+	  {
+	    "id" : "df",
+            "type" : "semantic",
+            "description" : {"value" : "Number of degrees of freedom"},
+	    "href" : "http://alps.io/schema.org/Integer"
+          },
+	  {
+	    "id" : "sumSq",
+            "type" : "semantic",
+            "description" : {"value" : "Sum of squares"},
+	    "href" : "http://alps.io/schema.org/Float"
+          },
+	  {
+	    "id" : "meanSq",
+            "type" : "semantic",
+            "description" : {"value" : "Mean of squares"},
+	    "href" : "http://alps.io/schema.org/Float"
+          },
+          {
+	    "id" : "FTest",
+            "type" : "semantic",
+            "description" : {"value" : "Is the effect significant?"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/FTest.json"
+          }
+        ]
+      }
+    ]
+  }
+}

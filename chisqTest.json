@@ -2,18 +2,18 @@
   "alps" : {
     "version" : "1.0",
     "doc" : {
-      "href" : "http://en.wikipedia.org/wiki/Student's_t-test"
+      "href" : "http://en.wikipedia.org/wiki/Chi-squared_test"
     },
     "descriptor" : [
       {
-        "id" : "tTest",
+        "id" : "chisqTest",
         "type" : "semantic",
-        "description" : {"value" : "Student t statistical test."},
+        "description" : {"value" : "Chi-squared statistical test."},
         "semantic" : [
           {
-	    "id" : "t",
+	    "id" : "X2",
             "type" : "semantic",
-            "description" : {"value" : "t statistic"},
+            "description" : {"value" : "X-squared statistic"},
 	    "href" : "http://alps.io/schema.org/Float"
  	  },
 	  {
@@ -26,7 +26,7 @@
 	    "id" : "pValue",
             "type" : "semantic",
             "description" : {"value" : "p-value of the test"},
-	    "href" : "http://alps.io/schema.org/Float"
+	    "href" : "https://raw.github.com/standard-analytics/Schemas/master/pValue"
 	  }
         ]
       }

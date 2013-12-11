@@ -10,17 +10,29 @@
         "type" : "semantic",
         "description" : {"value" : "Analysis of Variance"},
         "semantic" : [
-          {
-	    "id" : "Ftest",
+	  {
+	    "id" : "formula",
             "type" : "semantic",
-            "description" : {"value" : "F test comprised in the ANOVA"},
-            "href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
+            "description" : {"value" : "Formula of the model"},
+            "href" : "http://alps.io/schema.org/Text"
+          },
+          {
+	    "id" : "effect",
+            "type" : "semantic",
+            "description" : {"value" : "Effect being tested in the ANOVA"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/effect.json"
 	  },
 	  {
-	    "id" : "Ftests",
+	    "id" : "effects",
             "type" : "semantic",
-            "description" : {"value" : "F tests comprised in the ANOVA (legacy spelling; see singular form, event)"},
-            "href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
+            "description" : {"value" : "Effects being tested in the ANOVA (legacy spelling; see singular form, effect)"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/effect.json"
+	  },
+	  {
+	    "id" : "residuals",
+            "type" : "semantic",
+            "description" : {"value" : "Residuals of the complete model (H1)"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/residuals.json"
           },
 	  {
 	    "id" : "description",

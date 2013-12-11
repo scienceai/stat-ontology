@@ -2,7 +2,7 @@
   "alps" : {
     "version" : "1.0",
     "doc" : {
-      "href" : "http://example.org/samples/full/doc.html"
+      "href" : "http://en.wikipedia.org/wiki/Linear_model"
     },
     "descriptor" : [
       {
@@ -11,46 +11,40 @@
         "description" : {"value" : "Linear Model fit"},
         "semantic" : [
 	  {
+	    "id" : "formula",
+            "type" : "semantic",
+            "description" : {"value" : "Formula of the linear model"},
+            "href" : "http://alps.io/schema.org/Text"
+          },
+          {
+	    "id" : "coefficient",
+            "type" : "semantic",
+            "description" : {"value" : "Linear model coefficient"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/coefficient.json"
+          },
+          {
+	    "id" : "coefficients",
+            "type" : "semantic",
+            "description" : {"value" : "Linear model coefficient  (legacy spelling; see singular form, coefficient)"},
+	    "href" : "https://raw.github.com/standard-analytics/Schemas/master/coefficient.json"
+          },
+	  {
 	    "id" : "R2",
             "type" : "semantic",
             "description" : {"value" : "R-squared"},
-	    "href" : "http://schema.org/Float"
+	    "href" : "http://alps.io/schema.org/Float"
           },
  	  {
 	    "id" : "adjR2",
             "type" : "semantic",
             "description" : {"value" : "Adjusted r-squared"},
-	    "href" : "http://schema.org/Float"
+	    "href" : "http://alps.io/schema.org/Float"
           },
 	  {
 	    "id" : "FTest",
             "type" : "semantic",
-            "description" : {"value" : "F test for r2"},
-            "href" : "//github.com/standard-analytics/Schemas/blob/master/FTest.json"
-          },
-          {
-	    "id" : "coefficient",
-            "type" : "semantic",
-            "description" : {"value" : "linear model coefficient"},
-            "href" : "//github.com/standard-analytics/Schemas/blob/master/coefficient.json"
-          },
-	  {
-	    "id" : "response",
-            "type" : "semantic",
-            "description" : {"value" : "name of the response variable"},
-            "href" : "http://schema.org/String"
-          },
-	  {
-	    "id" : "formula",
-            "type" : "semantic",
-            "description" : {"value" : "formula of the linear model"},
-            "href" : "http://schema.org/String"
-          },
-          {
-	    "id" : "coefficients",
-            "type" : "semantic",
-            "description" : {"value" : "linear model coefficient  (legacy spelling; see singular form, event)"},
-            "href" : "//github.com/standard-analytics/Schemas/blob/master/coefficient.json"
+            "description" : {"value" : "F test"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/FTest.json"
           },
 	  {
 	    "id" : "description",
