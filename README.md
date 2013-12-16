@@ -8,13 +8,13 @@ Schemas to be proposed to alps.io
 **generalizedLinearModel** (formula, family, coefficient, coefficients, R2, adjR2, Ftest)  
 **corTest** (cor, tTest)
 
-**coefficient** (term, estimate, stdError, tTest, zTest, contrast)
-**effect** (term, df, sumSq, meanSq, FTest)
+**coefficient** (term, estimate, stdError, tTest, zTest, contrast)  
+**effect** (term, df, sumSq, meanSq, FTest)  
 
-**chisqTest** (X2, df, pValue)
-**FTest** (F, dfNum, dfDenom, pValue)  
-**tTest** (t, df, pValue)
-**zTest** (z, pValue)  
+**chisqTest** (X2, df, pValue)  
+**FTest** (F, dfNum, dfDenom, pValue)    
+**tTest** (t, df, pValue)  
+**zTest** (z, pValue)
 
 **deviance**(name, value, df)
 **residuals** (df, sumSq, meanSq)
