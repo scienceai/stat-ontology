@@ -1,0 +1,29 @@
+{
+  "alps" : {
+    "version" : "1.0",
+    "doc" : {
+      "href" : "http://en.wikipedia.org/wiki/Correlation"
+    },
+    "descriptor" : [
+      {
+        "id" : "corTest",
+        "type" : "semantic",
+        "description" : {"value" : "Correlation statistical test."},
+        "semantic" : [
+          {
+	    "id" : "cor",
+            "type" : "semantic",
+            "description" : {"value" : "correlation coefficient"},
+	    "href" : "http://alps.io/schema.org/Float"
+ 	  },
+	  {
+            "id" : "tTest",
+            "type" : "semantic",
+            "description" : {"value" : "t test: Is the correlation coefficient significantly non-zero"},
+            "href" : "https://raw.github.com/standard-analytics/Schemas/master/tTest.json"
+          }
+        ]
+      }
+    ]
+  }
+}

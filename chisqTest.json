@@ -16,6 +16,11 @@
             "description" : {"value" : "X-squared statistic"},
 	    "href" : "http://alps.io/schema.org/Float"
  	  },
+	  { "id": "probabilities",
+            "type": "semantic",
+	    "description" : {"value" : "Probability of each category"},
+	    "href" : "http://alps.io/schema.org/Float"
+      	  },
 	  {
 	    "id" : "df",
             "type" : "semantic",
