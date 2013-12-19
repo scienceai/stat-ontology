@@ -10,6 +10,12 @@
         "type" : "semantic",
         "description" : {"value" : "Student t statistical test."},
         "semantic" : [
+	  {
+	    "id" : "formula",
+            "type" : "semantic",
+            "description" : {"value" : "formula"},
+	    "href" : "http://alps.io/schema.org/Text"
+ 	  },
           {
 	    "id" : "t",
             "type" : "semantic",

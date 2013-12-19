@@ -10,6 +10,12 @@
         "type" : "semantic",
         "description" : {"value" : "Chi-squared statistical test."},
         "semantic" : [
+	  {
+	    "id" : "table",
+            "type" : "semantic",
+            "description" : {"value" : "Table on which Test is applied (either name or command defining it)."},
+	    "href" : "http://alps.io/schema.org/Float"
+ 	  },
           {
 	    "id" : "X2",
             "type" : "semantic",
