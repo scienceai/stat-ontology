@@ -242,6 +242,14 @@
       "domain": "stats:LinearModel",
       "status": "testing"
     },
+    {
+      "@id": "stats:fStatistic",
+      "@type": "rdf:Property",
+      "label": "F statistic",
+      "range": "stats:Statistic",
+      "domain": "stats:LinearModel",
+      "status": "testing"
+    },
 
     {
       "@id": "stats:modelFormula",
