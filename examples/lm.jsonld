@@ -1,5 +1,5 @@
 {
-  "@context": { "@vocab": "http://schema.standardanalytics.io/core/"},
+  "@context": { "@vocab": "http://schema.standardanalytics.io/ontology/stats"},
   "@type": "LinearModel",
   "modelFormula": "Petal.Length~Petal.Width",
   "r2": 0.92711,

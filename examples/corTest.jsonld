@@ -1,5 +1,5 @@
 {
-  "@context": { "@vocab": "http://schema.standardanalytics.io/core/"},
+  "@context": { "@vocab": "http://schema.standardanalytics.io/ontology/stats"},
   "@type": "Correlation",
   "estimate": -0.61377,
   "statTest": {

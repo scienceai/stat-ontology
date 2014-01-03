@@ -33,7 +33,7 @@
     },
     "status": "vs:term_status"
   },
-  "@id": "http://schema.standardanalytics.io/spec",
+  "@id": "http://schema.standardanalytics.io/ontology/datapackage",
   "defines": [
     {
       "@id": "spec:dataDependencies",
