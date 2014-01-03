@@ -1,6 +1,8 @@
 {
   "@context": { "@vocab": "http://schema.standardanalytics.io/ontology/stats"},
   "@type": "Correlation",
+  "covariate1": "Bogota2005$household_average_education",
+  "covariate2": "Bogota2005$household_size",
   "estimate": -0.61377,
   "statTest": {
     "@type": "TTest",
