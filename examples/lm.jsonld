@@ -1,0 +1,51 @@
+{
+  "@context": { "@vocab": "http://schema.standardanalytics.io/core/"},
+  "@type": "LinearModel",
+  "modelFormula": "Petal.Length~Petal.Width",
+  "r2": 0.92711,
+  "adjr2": 0.92662,
+  "modelCoefficients": [
+    {
+      "name": "(Intercept)",
+      "estimate": 1.0836,
+      "stdError": 0.072967,
+      "statTest": {
+        "type": "TTest",
+	"statistic": 14.85,
+	"df": 148,
+	"pValue": 4.0433e-31
+      }
+    },
+    {
+      "name": "Petal.Width",
+      "estimate": 2.2299,
+      "stdError": 0.051396,
+      "statTest": {
+        "@type": "TTest",
+	"statistic": 43.387,
+	"df": 148,
+	"pValue": 4.675e-86
+      }
+    }
+  ],
+  "anova": [
+    {
+      "@type": "ANOVAFactor",
+      "name": "Petal.Width",
+      "sumSq": 430.5,
+      "meanSq": 430.5,
+      "statTest": {
+        "@type": "FTest",
+	"statistic": 1882,
+	"dfNum": 1,
+	"dfDenom": 148,
+	"pValue": 0
+      }
+    },
+    {
+      "@type": "ANOVAResidual",
+      "sumSq": 33.8,
+      "meanSq": 0.2
+    }
+  ]
+}

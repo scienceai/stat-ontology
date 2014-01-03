@@ -1,0 +1,59 @@
+{
+  "@context": { "@vocab": "http://schema.standardanalytics.io/core/"},
+  "@type": "LinearModel",
+  "modelFormula": "prop ~ Treat * Strength + Error(Subject/Strength)",
+  "anova": [
+    {
+      "@type": "ANOVAFactor",
+      "name": "Treat",
+      "errorStratum": "Subject",
+      "sumSq": 551.92,
+      "meanSq": 551.92,
+      "statTest": {
+        "@type": "FTest",
+	"statistic": 1.7025,
+	"dfNum": 1,
+	"dfDenom": 106,
+	"pValue": 0.19479
+      }
+    },
+    {
+      "@type": "ANOVAResidual",
+      "sumSq": 34363,
+      "meanSq": 324.18
+    }
+    {
+      "@type": "ANOVAFactor",
+      "name": "Strength",
+      "errorStratum": "Subject:Strength",
+      "sumSq": 12038,
+      "meanSq": 12038,
+      "statTest": {
+        "@type": "FTest",
+	"statistic": 37.569,
+	"dfNum": 1,
+	"dfDenom": 106,
+	"pValue": 1.5336e-08
+      }
+    },
+    {
+      "@type": "ANOVAFactor",
+      "name": "Treat:Strength",
+      "errorStratum": "Subject:Strength",
+      "sumSq": 13.464,
+      "meanSq": 13.464,
+      "statTest": {
+        "@type": "FTest",
+	"statistic": 0.042019,
+	"dfNum": 1,
+	"dfDenom": 106,
+	"pValue": 0.83798
+      }
+    },
+    {
+      "@type": "ANOVAResidual",
+      "sumSq": 33964,
+      "meanSq": 320.42
+    }
+  ]
+}

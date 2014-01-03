@@ -1,0 +1,353 @@
+{
+  "@context": {
+    "stats": "http://schema.standardanalytics.io/core#",
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "defines": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "comment": "rdfs:comment",
+    "label": "rdfs:label",
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    },
+    "status": "vs:term_status"
+  },
+  "@id": "http://schema.standardanalytics.io/core",
+  "defines": [
+    {
+      "@id": "stats:StatTest",
+      "@type": "rdfs:Class",
+      "label": "Statistical test",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:TTest",
+      "@type": "rdfs:Class",
+      "label": "Statistical t-test",
+      "subClassOf": [
+        "stats:StatTest"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:FTest",
+      "@type": "rdfs:Class",
+      "label": "Statistical F-test",
+      "subClassOf": [
+        "stats:StatTest"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:ZTest",
+      "@type": "rdfs:Class",
+      "label": "Statistical z-test",
+      "subClassOf": [
+        "stats:StatTest"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:ChisqTest",
+      "@type": "rdfs:Class",
+      "label": "Statistical Chi-Square test",
+      "subClassOf": [
+        "stats:StatTest"
+      ],
+      "status": "testing"
+    },
+    
+    {
+      "@id": "stats:statistic",
+      "@type": "rdf:Property",
+      "label": "statistic",
+      "range": "xsd:float",
+      "domain": "stats:StatTest",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:pValue",
+      "@type": "rdf:Property",
+      "label": "p-value",
+      "range": "xsd:float",
+      "domain": "stats:StatTest",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:df",
+      "@type": "rdf:Property",
+      "label": "degrees of freedom",
+      "range": "xsd:integer",
+      "domain": "stats:StatTest",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:dfNum",
+      "@type": "rdf:Property",
+      "label": "degrees of freedom",
+      "range": "xsd:integer",
+      "domain": "stats:FTest",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:dfDenom",
+      "@type": "rdf:Property",
+      "label": "degrees of freedom",
+      "range": "xsd:integer",
+      "domain": "stats:FTest",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Statistic",
+      "@type": "rdfs:Class",
+      "label": "Statistic",
+      "subClassOf": [
+        "stats:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:estimate",
+      "@type": "rdf:Property",
+      "label": "Estimate",
+      "range": "xsd:float",
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:statTest",
+      "@type": "rdf:Property",
+      "label": "Sgtatistical test",
+      "range": "stats:StatTest",
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:stdError",
+      "@type": "rdf:Property",
+      "label": "Standard error",
+      "range": "xsd:float",
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Correlation",
+      "@type": "rdfs:Class",
+      "label": "Correlation coefficient",
+      "subClassOf": [
+        "stats:Statistic"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:covariate1",
+      "@type": "rdf:Property",
+      "label": "First covariate",
+      "range": "xsd:string",
+      "domain": "stats:Correlation",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:covariate2",
+      "@type": "rdf:Property",
+      "label": "Second covariate",
+      "range": "xsd:string",
+      "domain": "stats:Correlation",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Proportion",
+      "@type": "rdfs:Class",
+      "label": "Proportion",
+      "subClassOf": [
+        "stats:Statistic"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:StatModel",
+      "@type": "rdfs:Class",
+      "label": "Statistical model",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:aic",
+      "@type": "rdf:Property",
+      "label": "Akaike Information Criterium",
+      "range": "xsd:float",
+      "domain": "stats:StatModel",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:LinearModel",
+      "@type": "rdfs:Class",
+      "label": "Linear model",
+      "subClassOf": [
+        "schema:StatModel"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:r2",
+      "@type": "rdf:Property",
+      "label": "R squared",
+      "range": "xsd:float",
+      "domain": "stats:LinearModel",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:adjr2",
+      "@type": "rdf:Property",
+      "label": "adjusted R squared",
+      "range": "xsd:float",
+      "domain": "stats:LinearModel",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:modelFormula",
+      "@type": "rdf:Property",
+      "label": "Model formula",
+      "range": "xsd:string",
+      "domain": "stats:LinearModel",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:modelCoefficients",
+      "@type": "rdf:Property",
+      "label": "Model coefficients",
+      "range": "stats:Statistic",
+      "domain": "stats:LinearModel",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:anova",
+      "@type": "rdf:Property",
+      "label": "anova",
+      "range": "stats:ANOVARow",
+      "domain": "stats:LinearModel",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:ANOVARow",
+      "@type": "rdfs:Class",
+      "label": "ANOVA row",
+      "subClassOf": [
+        "stats:statistic"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:errorStratum",
+      "@type": "rdf:Property",
+      "label": "Error stratum",
+      "range": "xsd:string",
+      "domain": "stats:ANOVARow",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:sumSq",
+      "@type": "rdf:Property",
+      "label": "Sum of Squares",
+      "range": "xsd:float",
+      "domain": "stats:ANOVARow",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:meanSq",
+      "@type": "rdf:Property",
+      "label": "Mean of Squares",
+      "range": "xsd:float",
+      "domain": "stats:ANOVARow",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:ANOVAResidual",
+      "@type": "rdfs:Class",
+      "label": "ANOVA factor",
+      "subClassOf": [
+        "schema:ANOVARow"
+      ],
+      "status": "testing"
+    },    
+
+    {
+      "@id": "stats:ANOVAFactor",
+      "@type": "rdfs:Class",
+      "label": "ANOVA factor",
+      "subClassOf": [
+        "schema:ANOVARow"
+      ],
+      "status": "testing"
+    },    
+
+    {
+      "@id": "stats:GeneralisedLinearModel",
+      "@type": "rdfs:Class",
+      "label": "Statistical model",
+      "subClassOf": [
+        "schema:LinearModel"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:modelFamily",
+      "@type": "rdf:Property",
+      "label": "Test parameters",
+      "range": "xsd:string",
+      "domain": "stats:GeneralisedLinearModel",
+      "status": "testing"
+    },
+
+
+  ],
+  "@type": "owl:Ontology",
+  "comment": "A lightweight vocabulary for standard statistical analysis",
+  "label": "The Standard Analytics Core Vocabulary"
+}
+    
+    
+    
