@@ -4,6 +4,13 @@
   "modelFormula": "Petal.Length~Petal.Width",
   "r2": 0.92711,
   "adjr2": 0.92662,
+  "fRatioTest": {
+    "@type": "FTest",
+    "statistic": 1882,
+    "dfNum": 1,
+    "dfDenom": 148,
+    "pValue": 0
+  }
   "modelCoefficients": [
     {
       "name": "(Intercept)",
@@ -26,26 +33,6 @@
 	"df": 148,
 	"pValue": 4.675e-86
       }
-    }
-  ],
-  "anova": [
-    {
-      "@type": "ANOVAFactor",
-      "name": "Petal.Width",
-      "sumSq": 430.5,
-      "meanSq": 430.5,
-      "statTest": {
-        "@type": "FTest",
-	"statistic": 1882,
-	"dfNum": 1,
-	"dfDenom": 148,
-	"pValue": 0
-      }
-    },
-    {
-      "@type": "ANOVAResidual",
-      "sumSq": 33.8,
-      "meanSq": 0.2
     }
   ]
 }

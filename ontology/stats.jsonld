@@ -243,10 +243,10 @@
       "status": "testing"
     },
     {
-      "@id": "stats:fStatistic",
+      "@id": "stats:fRatioTest",
       "@type": "rdf:Property",
-      "label": "F statistic",
-      "range": "stats:Statistic",
+      "label": "F-Ratio Test",
+      "range": "stats:StatTest",
       "domain": "stats:LinearModel",
       "status": "testing"
     },
@@ -332,9 +332,9 @@
     },    
 
     {
-      "@id": "stats:GeneralisedLinearModel",
+      "@id": "stats:GeneralizedLinearModel",
       "@type": "rdfs:Class",
-      "label": "Statistical model",
+      "label": "Generalized linear model",
       "subClassOf": [
         "schema:LinearModel"
       ],
