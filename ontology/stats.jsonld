@@ -41,6 +41,7 @@
       "@id": "stats:StatTest",
       "@type": "rdfs:Class",
       "label": "Statistical test",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_hypothesis_testing",
       "subClassOf": [
         "schema:Intangible"
       ],
@@ -59,6 +60,7 @@
       "@id": "stats:FTest",
       "@type": "rdfs:Class",
       "label": "Statistical F-test",
+      "seeAlso": "http://en.wikipedia.org/wiki/T_test",
       "subClassOf": [
         "stats:StatTest"
       ],
@@ -68,6 +70,7 @@
       "@id": "stats:ZTest",
       "@type": "rdfs:Class",
       "label": "Statistical z-test",
+      "seeAlso": "http://en.wikipedia.org/wiki/Z_test",
       "subClassOf": [
         "stats:StatTest"
       ],
@@ -77,6 +80,7 @@
       "@id": "stats:ChisqTest",
       "@type": "rdfs:Class",
       "label": "Statistical Chi-Square test",
+      "seeAlso": "http://en.wikipedia.org/wiki/Chi_square_test",
       "subClassOf": [
         "stats:StatTest"
       ],
@@ -87,6 +91,7 @@
       "@id": "stats:statistic",
       "@type": "rdf:Property",
       "label": "statistic",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "range": "xsd:float",
       "domain": "stats:StatTest",
       "status": "testing"
@@ -95,6 +100,7 @@
       "@id": "stats:pValue",
       "@type": "rdf:Property",
       "label": "p-value",
+      "seeAlso": "http://en.wikipedia.org/wiki/P_value",
       "range": "xsd:float",
       "domain": "stats:StatTest",
       "status": "testing"
@@ -103,6 +109,7 @@
       "@id": "stats:df",
       "@type": "rdf:Property",
       "label": "degrees of freedom",
+      "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
       "range": "xsd:integer",
       "domain": "stats:StatTest",
       "status": "testing"
@@ -112,6 +119,7 @@
       "@id": "stats:dfNum",
       "@type": "rdf:Property",
       "label": "degrees of freedom",
+      "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
       "range": "xsd:integer",
       "domain": "stats:FTest",
       "status": "testing"
@@ -120,6 +128,7 @@
       "@id": "stats:dfDenom",
       "@type": "rdf:Property",
       "label": "degrees of freedom",
+      "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
       "range": "xsd:integer",
       "domain": "stats:FTest",
       "status": "testing"
@@ -129,6 +138,7 @@
       "@id": "stats:Statistic",
       "@type": "rdfs:Class",
       "label": "Statistic",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "subClassOf": [
         "stats:QuantitativeValue"
       ],
@@ -139,6 +149,7 @@
       "@id": "stats:estimate",
       "@type": "rdf:Property",
       "label": "Estimate",
+      "seeAlso": "http://en.wikipedia.org/wiki/Estimation_statistics",
       "range": "xsd:float",
       "domain": "stats:Statistic",
       "status": "testing"
@@ -147,6 +158,7 @@
       "@id": "stats:statTest",
       "@type": "rdf:Property",
       "label": "Sgtatistical test",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_test",
       "range": "stats:StatTest",
       "domain": "stats:Statistic",
       "status": "testing"
@@ -155,6 +167,7 @@
       "@id": "stats:stdError",
       "@type": "rdf:Property",
       "label": "Standard error",
+      "seeAlso": "http://en.wikipedia.org/wiki/Standard_error",
       "range": "xsd:float",
       "domain": "stats:Statistic",
       "status": "testing"
@@ -164,6 +177,7 @@
       "@id": "stats:Correlation",
       "@type": "rdfs:Class",
       "label": "Correlation coefficient",
+      "seeAlso": "http://en.wikipedia.org/wiki/Correlation",
       "subClassOf": [
         "stats:Statistic"
       ],
@@ -174,6 +188,7 @@
       "@id": "stats:covariate1",
       "@type": "rdf:Property",
       "label": "First covariate",
+      "seeAlso": "http://en.wikipedia.org/wiki/Covariate",
       "range": "xsd:string",
       "domain": "stats:Correlation",
       "status": "testing"
@@ -182,6 +197,7 @@
       "@id": "stats:covariate2",
       "@type": "rdf:Property",
       "label": "Second covariate",
+      "seeAlso": "http://en.wikipedia.org/wiki/Covariate",
       "range": "xsd:string",
       "domain": "stats:Correlation",
       "status": "testing"
@@ -191,6 +207,7 @@
       "@id": "stats:Proportion",
       "@type": "rdfs:Class",
       "label": "Proportion",
+      "seeAlso": "http://en.wikipedia.org/wiki/Proportionality_(mathematics)",
       "subClassOf": [
         "stats:Statistic"
       ],
@@ -201,6 +218,7 @@
       "@id": "stats:StatModel",
       "@type": "rdfs:Class",
       "label": "Statistical model",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
       "subClassOf": [
         "schema:Intangible"
       ],
@@ -211,6 +229,7 @@
       "@id": "stats:aic",
       "@type": "rdf:Property",
       "label": "Akaike Information Criterium",
+      "seeAlso": "http://en.wikipedia.org/wiki/Akaike_information_criterion",
       "range": "xsd:float",
       "domain": "stats:StatModel",
       "status": "testing"
@@ -220,6 +239,7 @@
       "@id": "stats:LinearModel",
       "@type": "rdfs:Class",
       "label": "Linear model",
+      "seeAlso": "http://en.wikipedia.org/wiki/Linear_model",
       "subClassOf": [
         "schema:StatModel"
       ],
@@ -230,6 +250,7 @@
       "@id": "stats:r2",
       "@type": "rdf:Property",
       "label": "R squared",
+      "seeAlso": "http://en.wikipedia.org/wiki/R_squared",
       "range": "xsd:float",
       "domain": "stats:LinearModel",
       "status": "testing"
@@ -238,6 +259,7 @@
       "@id": "stats:adjr2",
       "@type": "rdf:Property",
       "label": "adjusted R squared",
+      "seeAlso": "http://en.wikipedia.org/wiki/R_squared#Adjusted_R2",
       "range": "xsd:float",
       "domain": "stats:LinearModel",
       "status": "testing"
@@ -246,6 +268,7 @@
       "@id": "stats:fRatioTest",
       "@type": "rdf:Property",
       "label": "F-Ratio Test",
+      "seeAlso": "http://en.wikipedia.org/wiki/F-test",
       "range": "stats:StatTest",
       "domain": "stats:LinearModel",
       "status": "testing"
@@ -255,6 +278,7 @@
       "@id": "stats:modelFormula",
       "@type": "rdf:Property",
       "label": "Model formula",
+      "seeAlso": "http://en.wikipedia.org/wiki/Formula",
       "range": "xsd:string",
       "domain": "stats:LinearModel",
       "status": "testing"
@@ -263,6 +287,7 @@
       "@id": "stats:modelCoefficients",
       "@type": "rdf:Property",
       "label": "Model coefficients",
+      "seeAlso": "http://en.wikipedia.org/wiki/Regression_coefficient",
       "range": "stats:Statistic",
       "domain": "stats:LinearModel",
       "status": "testing"
@@ -271,6 +296,7 @@
       "@id": "stats:anova",
       "@type": "rdf:Property",
       "label": "anova",
+      "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "range": "stats:ANOVARow",
       "domain": "stats:LinearModel",
       "status": "testing"
@@ -280,6 +306,7 @@
       "@id": "stats:ANOVARow",
       "@type": "rdfs:Class",
       "label": "ANOVA row",
+      "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "subClassOf": [
         "stats:statistic"
       ],
@@ -290,6 +317,7 @@
       "@id": "stats:errorStratum",
       "@type": "rdf:Property",
       "label": "Error stratum",
+      "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "range": "xsd:string",
       "domain": "stats:ANOVARow",
       "status": "testing"
@@ -298,6 +326,7 @@
       "@id": "stats:sumSq",
       "@type": "rdf:Property",
       "label": "Sum of Squares",
+      "seeAlso": "http://en.wikipedia.org/wiki/Partition_of_sums_of_squares",
       "range": "xsd:float",
       "domain": "stats:ANOVARow",
       "status": "testing"
@@ -306,6 +335,7 @@
       "@id": "stats:meanSq",
       "@type": "rdf:Property",
       "label": "Mean of Squares",
+      "seeAlso": "http://en.wikipedia.org/wiki/Partition_of_sums_of_squares",
       "range": "xsd:float",
       "domain": "stats:ANOVARow",
       "status": "testing"
@@ -315,6 +345,7 @@
       "@id": "stats:ANOVAResidual",
       "@type": "rdfs:Class",
       "label": "ANOVA factor",
+      "seeAlso": "http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics",
       "subClassOf": [
         "schema:ANOVARow"
       ],
@@ -325,6 +356,7 @@
       "@id": "stats:ANOVAFactor",
       "@type": "rdfs:Class",
       "label": "ANOVA factor",
+      "seeAlso": "http://en.wikipedia.org/wiki/Factor_analysis",
       "subClassOf": [
         "schema:ANOVARow"
       ],
@@ -335,6 +367,7 @@
       "@id": "stats:GeneralizedLinearModel",
       "@type": "rdfs:Class",
       "label": "Generalized linear model",
+      "seeAlso": "http://en.wikipedia.org/wiki/Generalized_linear_model",
       "subClassOf": [
         "schema:LinearModel"
       ],
@@ -345,6 +378,7 @@
       "@id": "stats:modelFamily",
       "@type": "rdf:Property",
       "label": "Test parameters",
+      "seeAlso": "http://en.wikipedia.org/wiki/Generalized_linear_model",
       "range": "xsd:string",
       "domain": "stats:GeneralisedLinearModel",
       "status": "testing"
