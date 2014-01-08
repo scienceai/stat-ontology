@@ -1,6 +1,6 @@
 exports.stats = {
   "@context": {
-    "stats": "http://schema.standardanalytics.io/ontology/stats#",
+    "stats": "http://standardanalytics.io/stats#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -35,25 +35,15 @@ exports.stats = {
     },
     "status": "vs:term_status"
   },
-  "@id": "http://schema.standardanalytics.io/ontology/stats",
+  "@id": "http://standardanalytics.io/stats",
   "defines": [
-    {
-      "@id": "stats:StatResult",
-      "@type": "rdfs:Class",
-      "label": "Statistical Result",
-      "seeAlso": "http://en.wikipedia.org/wiki/Statistics",
-      "subClassOf": [
-        "schema:Intangible", "schema:Comment"
-      ],
-      "status": "testing"    
-    }
     {
       "@id": "stats:StatTest",
       "@type": "rdfs:Class",
       "label": "Statistical test",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_hypothesis_testing",
       "subClassOf": [
-        "stats:StatResult"
+        "schema:Intangible"
       ],
       "status": "testing"
     },
@@ -150,7 +140,7 @@ exports.stats = {
       "label": "Statistic",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "subClassOf": [
-        "stats:QuantitativeValue","stats:StatResult"
+        "stats:QuantitativeValue"
       ],
       "status": "testing"
     },
@@ -230,7 +220,7 @@ exports.stats = {
       "label": "Statistical model",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
       "subClassOf": [
-        "stat:StatResult"
+        "schema:Intangible"
       ],
       "status": "testing"
     },
@@ -404,6 +394,7 @@ exports.stats = {
 
 exports.datapackage = {
   "@context": {
+    "dpkg": "http://standardanalytics.io/datapackage#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -437,36 +428,55 @@ exports.datapackage = {
     },
     "status": "vs:term_status"
   },
-  "@id": "http://schema.standardanalytics.io/ontology/datapackage",
+  "@id": "http://standardanalytics.io/datapackage",
   "defines": [
     {
-      "@id": "spec:dataDependencies",
+      "@id": "dpkg:repository",
       "@type": "rdf:Property",
-      "label": "data dependencies",
-      "range": "schema:DataCatalog",
-      "domain": "schema:DataCatalog",
-      "status": "testing",
-      "seeAlso": "http://dataprotocols.org/data-packages/#core-fields"
-    },
-    {
-      "@id": "spec:resources",
-      "@type": "rdf:Property",
-      "label": "resources",
-      "range": "schema:DataSet",
-      "domain": "schema:DataCatalog",
-      "status": "testing",
-      "seeAlso": "http://dataprotocols.org/data-packages/#resource-information"
-    },
-    {
-      "@id": "spec:code",
-      "@type": "rdf:Property",
-      "label": "code",
+      "label": "repository",
       "range": "schema:Code",
       "domain": "schema:DataCatalog",
-      "status": "testing"
+      "status": "testing",
+      "seeAlso": "http://schema.org/Code"
     },
     {
-      "@id": "spec:data",
+      "@id": "dpkg:path",
+      "@type": "rdf:Property",
+      "label": "path",
+      "range": "xsd:string",
+      "domain": "schema:Code",
+      "status": "testing",
+      "seeAlso": "http://wiki.commonjs.org/wiki/Packages/1.1"
+    },
+    {
+      "@id": "dpkg:analytics",
+      "@type": "rdf:Property",
+      "label": "analytics",
+      "range": "schema:Code",
+      "domain": "schema:DataCatalog",
+      "status": "testing",
+      "seeAlso": "http://schema.org/Code"
+    },
+    {
+      "@id": "dpkg:input",
+      "@type": "rdf:Property",
+      "label": "input",
+      "range": "xsd:string",
+      "domain": "schema:Code",
+      "status": "testing",
+      "seeAlso": "http://schema.org/Code"
+    },
+    {
+      "@id": "dpkg:output",
+      "@type": "rdf:Property",
+      "label": "output",
+      "range": "xsd:string",
+      "domain": "schema:Code",
+      "status": "testing",
+      "seeAlso": "http://schema.org/Code"
+    },
+    {
+      "@id": "dpkg:data",
       "@type": "rdf:Property",
       "label": "Inline data of a data package resource",
       "range": "schema:DataDownload",
