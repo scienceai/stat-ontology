@@ -1,0 +1,31 @@
+{
+  "name": "standardanalytics-terms",
+  "version": "0.0.0",
+  "description": "Standard Analytics IO ontologies",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/standard-analytics/schemas.git"
+  },
+  "keywords": [
+    "RDF",
+    "linked",
+    "data",
+    "hyperdata",
+    "statistics",
+    "datapackage",
+    "JSON-LD"
+  ],
+  "author": "Joseph Dureau",
+  "contributors": [
+    {
+      "name": "Sebastien Ballesteros",
+      "email": "sebastien@standardanalytics.io"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/standard-analytics/schemas/issues"
+  },
+  "homepage": "https://github.com/standard-analytics/schemas"
+}
