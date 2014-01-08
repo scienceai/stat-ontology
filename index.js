@@ -151,7 +151,7 @@ exports.stats = {
       "comment": "Function of the sample.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "subClassOf": [
-        "stats:QuantitativeValue"
+        "schema:QuantitativeValue"
       ],
       "status": "testing"
     },
@@ -262,7 +262,7 @@ exports.stats = {
       "comment": "In a linear model, data are modeled using linear predictor functions, and unknown model parameters are estimated from the data.",
       "seeAlso": "http://en.wikipedia.org/wiki/Linear_model",
       "subClassOf": [
-        "schema:StatModel"
+        "stats:StatModel"
       ],
       "status": "testing"
     },
@@ -336,7 +336,7 @@ exports.stats = {
       "comment": "Row of an ANOVA",
       "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "subClassOf": [
-        "stats:statistic"
+        "stats:Statistic"
       ],
       "status": "testing"
     },
@@ -379,7 +379,7 @@ exports.stats = {
       "comment": "Difference between the observed value and the estimated function value.",
       "seeAlso": "http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics",
       "subClassOf": [
-        "schema:ANOVARow"
+        "stats:ANOVARow"
       ],
       "status": "testing"
     },    
@@ -391,7 +391,7 @@ exports.stats = {
       "comment":"Process inputs an investigator manipulates to cause a change in the output.",
       "seeAlso": "http://en.wikipedia.org/wiki/Factor_analysis",
       "subClassOf": [
-        "schema:ANOVARow"
+        "stats:ANOVARow"
       ],
       "status": "testing"
     },    
@@ -403,7 +403,7 @@ exports.stats = {
       "comment":"Generalized linear model",
       "seeAlso": "http://en.wikipedia.org/wiki/Generalized_linear_model",
       "subClassOf": [
-        "schema:LinearModel"
+        "stats:LinearModel"
       ],
       "status": "testing"
     },
@@ -415,7 +415,7 @@ exports.stats = {
       "comment":"Family of a generalized linear model.",
       "seeAlso": "http://en.wikipedia.org/wiki/Generalized_linear_model",
       "range": "xsd:string",
-      "domain": "stats:GeneralisedLinearModel",
+      "domain": "stats:GeneralizedLinearModel",
       "status": "testing"
     },
 
