@@ -38,12 +38,22 @@
   "@id": "http://schema.standardanalytics.io/ontology/stats",
   "defines": [
     {
+      "@id": "stats:StatResult",
+      "@type": "rdfs:Class",
+      "label": "Statistical Result",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistics",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"    
+    }
+    {
       "@id": "stats:StatTest",
       "@type": "rdfs:Class",
       "label": "Statistical test",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_hypothesis_testing",
       "subClassOf": [
-        "schema:Intangible"
+        "schema:StatResult"
       ],
       "status": "testing"
     },
@@ -140,7 +150,7 @@
       "label": "Statistic",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "subClassOf": [
-        "stats:QuantitativeValue"
+        "stats:QuantitativeValue","stats:StatResult"
       ],
       "status": "testing"
     },
@@ -220,7 +230,7 @@
       "label": "Statistical model",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
       "subClassOf": [
-        "schema:Intangible"
+        "stat:StatResult"
       ],
       "status": "testing"
     },
