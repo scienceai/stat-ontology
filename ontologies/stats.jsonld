@@ -43,7 +43,7 @@
       "label": "Statistical Result",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistics",
       "subClassOf": [
-        "schema:Intangible"
+        "schema:Intangible", "schema:Comment"
       ],
       "status": "testing"    
     }
@@ -53,7 +53,7 @@
       "label": "Statistical test",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_hypothesis_testing",
       "subClassOf": [
-        "schema:StatResult"
+        "stats:StatResult"
       ],
       "status": "testing"
     },
