@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/standard-analytics/schemas.git"
+    "url": "git://github.com/standard-analytics/terms.git"
   },
   "keywords": [
     "RDF",
@@ -25,7 +25,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/standard-analytics/schemas/issues"
+    "url": "https://github.com/standard-analytics/terms/issues"
   },
-  "homepage": "https://github.com/standard-analytics/schemas"
+  "homepage": "https://github.com/standard-analytics/terms"
 }
