@@ -476,12 +476,22 @@ exports.datapackage = {
       "seeAlso": "http://schema.org/Code"
     },
     {
-      "@id": "dpkg:path",
+      "@id": "dpkg:codePath",
       "@type": "rdf:Property",
       "label": "path",
       "comment":"Absolute or relative path.",
       "range": "xsd:string",
       "domain": "schema:Code",
+      "status": "testing",
+      "seeAlso": "http://wiki.commonjs.org/wiki/Packages/1.1"
+    },
+    {
+      "@id": "dpkg:path",
+      "@type": "rdf:Property",
+      "label": "path",
+      "comment":"Absolute or relative path.",
+      "range": "xsd:string",
+      "domain": "schema:Dataset",
       "status": "testing",
       "seeAlso": "http://wiki.commonjs.org/wiki/Packages/1.1"
     },
