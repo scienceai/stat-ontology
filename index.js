@@ -1,6 +1,6 @@
 exports.stats = {
   "@context": {
-    "stats": "http://standardanalytics.io/stats#",
+    "stats": "http://standardanalytics.io/stats/",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -375,7 +375,7 @@ exports.stats = {
     {
       "@id": "stats:ANOVAResidual",
       "@type": "rdfs:Class",
-      "label": "ANOVA factor",
+      "label": "ANOVA residual",
       "comment": "Difference between the observed value and the estimated function value.",
       "seeAlso": "http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics",
       "subClassOf": [
@@ -531,7 +531,7 @@ exports.datapackage = {
       "comment":"Inline data of a datapackage Dataset",
       "label": "data",
       "range": "schema:DataDownload",
-      "domain": "schema:DataSet",
+      "domain": "schema:Dataset",
       "status": "testing",
       "seeAlso": "http://dataprotocols.org/data-packages/#resource-information"
     }
