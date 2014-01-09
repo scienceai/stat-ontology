@@ -93,7 +93,7 @@ exports.stats = {
     },
     
     {
-      "@id": "stats:statistic",
+      "@id": "stats:testStatistic",
       "@type": "rdf:Property",
       "label": "statistic",
       "comment": "Numerical summary of a dataset used to perform a hypothesis test.",
