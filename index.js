@@ -95,7 +95,7 @@ exports.stats = {
     {
       "@id": "stats:testStatistic",
       "@type": "rdf:Property",
-      "label": "statistic",
+      "label": "Test statistic",
       "comment": "Numerical summary of a dataset used to perform a hypothesis test.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "range": "xsd:float",
@@ -115,7 +115,7 @@ exports.stats = {
     {
       "@id": "stats:df",
       "@type": "rdf:Property",
-      "label": "degrees of freedom",
+      "label": "Number of degrees of freedom",
       "comment": "The number of degrees of freedom is the number of values in the final calculation of a statistic that are free to vary.",
       "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
       "range": "xsd:integer",
@@ -126,7 +126,7 @@ exports.stats = {
     {
       "@id": "stats:dfNum",
       "@type": "rdf:Property",
-      "label": "degrees of freedom",
+      "label": "Number of degrees of freedom",
       "comment": "Number of degrees of freedom of the numerator.",
       "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
       "range": "xsd:integer",
@@ -136,7 +136,7 @@ exports.stats = {
     {
       "@id": "stats:dfDenom",
       "@type": "rdf:Property",
-      "label": "degrees of freedom",
+      "label": "Number of degrees of freedom",
       "comment": "Number of degrees of freedom of the denominator.",
       "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
       "range": "xsd:integer",
@@ -270,7 +270,7 @@ exports.stats = {
     {
       "@id": "stats:r2",
       "@type": "rdf:Property",
-      "label": "R squared",
+      "label": "R-squared",
       "comment": "Coefficient of determination, pronounced R squared, that indicates how well data points fit a line or curve.",
       "seeAlso": "http://en.wikipedia.org/wiki/R_squared",
       "range": "xsd:float",
@@ -280,7 +280,7 @@ exports.stats = {
     {
       "@id": "stats:adjr2",
       "@type": "rdf:Property",
-      "label": "adjusted R squared",
+      "label": "Adjusted R-squared",
       "comment": "The adjusted R2 is an attempt to take account of the phenomenon of the R2 automatically and spuriously increasing when extra explanatory variables are added to the model.",
       "seeAlso": "http://en.wikipedia.org/wiki/R_squared#Adjusted_R2",
       "range": "xsd:float",
@@ -321,7 +321,7 @@ exports.stats = {
     {
       "@id": "stats:anova",
       "@type": "rdf:Property",
-      "label": "anova",
+      "label": "Analysis of Variance",
       "comment": "Collection of statistical models used to analyze the differences between group means and their associated procedures (such as 'variation' among and between groups).",
       "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "range": "stats:ANOVARow",
@@ -417,7 +417,7 @@ exports.stats = {
       "range": "xsd:string",
       "domain": "stats:GeneralizedLinearModel",
       "status": "testing"
-    },
+    }
 
 
   ],
