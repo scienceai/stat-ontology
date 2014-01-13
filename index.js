@@ -476,16 +476,6 @@ exports.datapackage = {
       "seeAlso": "http://schema.org/Code"
     },
     {
-      "@id": "dpkg:codePath",
-      "@type": "rdf:Property",
-      "label": "path",
-      "comment":"Absolute or relative path.",
-      "range": "xsd:string",
-      "domain": "schema:Code",
-      "status": "testing",
-      "seeAlso": "http://wiki.commonjs.org/wiki/Packages/1.1"
-    },
-    {
       "@id": "dpkg:path",
       "@type": "rdf:Property",
       "label": "path",
@@ -526,15 +516,26 @@ exports.datapackage = {
       "seeAlso": "http://schema.org/Code"
     },
     {
-      "@id": "dpkg:data",
+      "@id": "dpkg:contentData",
       "@type": "rdf:Property",
-      "comment":"Inline data of a datapackage Dataset",
-      "label": "data",
+      "comment":"Inline data content of a datapackage Dataset",
+      "label": "content data",
       "range": "schema:DataDownload",
       "domain": "schema:Dataset",
       "status": "testing",
       "seeAlso": "http://dataprotocols.org/data-packages/#resource-information"
+    },
+    {
+      "@id": "dpkg:contentPath",
+      "@type": "rdf:Property",
+      "comment":"Link to the data content of a datapackage Dataset",
+      "label": "content data",
+      "range": "xsd:string",
+      "domain": "schema:Dataset",
+      "status": "testing",
+      "seeAlso": "http://dataprotocols.org/data-packages/#resource-information"
     }
+
   ],
   "@type": "owl:Ontology",
   "comment": "A lightweight vocabulary for terms of the data package spec",
