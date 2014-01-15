@@ -22,7 +22,9 @@ Let's now illustrate how this markup vocabulary can be used to transform quantit
 
 ```
 <p>
-The French spend the most time per day eating, but have one of the lowest obesity rates among developed nations. Coincidence? Maybe not, there does seem to be some correlation among OECD countries (cor = -0.45,  p   = 0.06).
+The French spend the most time per day eating, but have one of the lowest obesity
+rates among developed nations. Coincidence? Maybe not, there does seem to be some
+correlation among OECD countries (cor = -0.45,  p   = 0.06).
 </p>
 ```
 
@@ -33,7 +35,9 @@ With the markup vocabulary we propose, you can make it explicit for machines tha
    prefix="stats: http://standardanalytics.io/stats/" 
    resource="#obesity"
    typeof="Comment stats:Correlation">
-The French spend the most time per day eating, but have one of the lowest obesity rates among developed nations. Coincidence? Maybe not, there does seem to be some correlation among OECD countries 
+The French spend the most time per day eating, but have one of the lowest obesity
+rates among developed nations. Coincidence? Maybe not, there does seem to be some
+correlation among OECD countries 
 (<a property="isBasedOnUrl" 
     href="http://r.standardanalytics.io/obesity/0.0.0">
  cor = <span property="stats:estimate">-0.45</span>,
