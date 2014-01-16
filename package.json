@@ -1,6 +1,6 @@
 {
   "name": "standard-analytics-terms",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Standard Analytics IO ontologies",
   "main": "index.js",
   "repository": {

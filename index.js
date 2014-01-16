@@ -481,7 +481,7 @@ exports.datapackage = {
       "label": "path",
       "comment":"Absolute or relative path.",
       "range": "xsd:string",
-      "domain": "schema:Dataset",
+      "domain": "schema:Code",
       "status": "testing",
       "seeAlso": "http://wiki.commonjs.org/wiki/Packages/1.1"
     },
@@ -501,9 +501,9 @@ exports.datapackage = {
       "label": "input",
       "comment":"List of absolute or relative URLs of data resources used in a given analysis.",
       "range": "xsd:string",
-      "domain": "schema:Code",
+      "domain": "schema:SoftwareApplication",
       "status": "testing",
-      "seeAlso": "http://schema.org/Code"
+      "seeAlso": "http://schema.org/SoftwareApplication"
     },
     {
       "@id": "dpkg:output",
@@ -511,17 +511,17 @@ exports.datapackage = {
       "label": "output",
       "comment":"List of absolute or relative URLs of data resources generated in a given analysis.",
       "range": "xsd:string",
-      "domain": "schema:Code",
+      "domain": "schema:SoftwareApplication",
       "status": "testing",
-      "seeAlso": "http://schema.org/Code"
+      "seeAlso": "http://schema.org/SoftwareApplication"
     },
     {
       "@id": "dpkg:contentData",
       "@type": "rdf:Property",
       "comment":"Inline data content of a datapackage Dataset.",
       "label": "content data",
-      "range": "schema:DataDownload",
-      "domain": "schema:Dataset",
+      "range": "xsd:string",
+      "domain": "schema:DataDownload",
       "status": "testing",
       "seeAlso": "http://dataprotocols.org/data-packages/#resource-information"
     },
@@ -531,7 +531,7 @@ exports.datapackage = {
       "comment":"Unix-style ('/') path to the data content of a datapackage Dataset. The path must be relative to the directory in which the DataCatalog containing this resource resides.",
       "label": "content path",
       "range": "xsd:string",
-      "domain": "schema:Dataset",
+      "domain": "schema:DataDownload",
       "status": "testing",
       "seeAlso": "http://dataprotocols.org/data-packages/#resource-information"
     }
