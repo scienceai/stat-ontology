@@ -518,7 +518,7 @@ exports.datapackage = {
     {
       "@id": "dpkg:contentData",
       "@type": "rdf:Property",
-      "comment":"Inline data content of a datapackage Dataset. This content will be stored independently at the publication stage, and will be given a unique URL. In the Dataset, 'contentData' will be replaced by 'contentUrl' linking to this unique URL.",
+      "comment":"Inline data content of a datapackage Dataset. This content will be stored independently at the publication stage, and will be given a unique URL.",
       "label": "content data",
       "range": "schema:DataDownload",
       "domain": "schema:Dataset",
