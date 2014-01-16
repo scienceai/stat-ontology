@@ -518,7 +518,7 @@ exports.datapackage = {
     {
       "@id": "dpkg:contentData",
       "@type": "rdf:Property",
-      "comment":"Inline data content of a datapackage Dataset. This content will be stored independently at the publication stage, and will be given a unique URL.",
+      "comment":"Inline data content of a datapackage Dataset.",
       "label": "content data",
       "range": "schema:DataDownload",
       "domain": "schema:Dataset",
@@ -528,7 +528,7 @@ exports.datapackage = {
     {
       "@id": "dpkg:contentPath",
       "@type": "rdf:Property",
-      "comment":"Unix-style ('/') path to the data content of a datapackage Dataset. The path must be relative to the directory in which the DataCatalog containing this resource resides. This content will be stored independently at the publication stage, and will be given a unique URL.",
+      "comment":"Unix-style ('/') path to the data content of a datapackage Dataset. The path must be relative to the directory in which the DataCatalog containing this resource resides.",
       "label": "content data",
       "range": "xsd:string",
       "domain": "schema:Dataset",
