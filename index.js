@@ -529,7 +529,7 @@ exports.datapackage = {
       "@id": "dpkg:contentPath",
       "@type": "rdf:Property",
       "comment":"Unix-style ('/') path to the data content of a datapackage Dataset. The path must be relative to the directory in which the DataCatalog containing this resource resides.",
-      "label": "content data",
+      "label": "content path",
       "range": "xsd:string",
       "domain": "schema:Dataset",
       "status": "testing",
