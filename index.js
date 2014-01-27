@@ -254,6 +254,26 @@ exports.stats = {
       "domain": "stats:StatModel",
       "status": "testing"
     },
+    {
+      "@id": "stats:bic",
+      "@type": "rdf:Property",
+      "label": "Bayesian Information Criterium",
+      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Bayesian_information_criterion",
+      "range": "xsd:float",
+      "domain": "stats:StatModel",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:loglik",
+      "@type": "rdf:Property",
+      "label": "log-Likelihood",
+      "comment": "Log-probability of observing the data under the model assumptions and given parameter values.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Log-likelihood",
+      "range": "xsd:float",
+      "domain": "stats:StatModel",
+      "status": "testing"
+    },
 
     {
       "@id": "stats:LinearModel",
