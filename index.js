@@ -169,16 +169,6 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:estimate",
-      "@type": "rdf:Property",
-      "label": "Estimate",
-      "comment": "Numerical summary of a dataset.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Estimation_statistics",
-      "range": "xsd:float",
-      "domain": "stats:Statistic",
-      "status": "testing"
-    },
-    {
       "@id": "stats:statTest",
       "@type": "rdf:Property",
       "label": "Statistical test",
@@ -276,6 +266,16 @@ exports.stats = {
       "domain": "stats:StatModel",
       "status": "testing"
     },
+    {
+      "@id": "stats:modelParameter",
+      "@type": "rdf:Property",
+      "label": "Model parameter",
+      "comment": "Model parameter.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Model_parameter",
+      "range": "stats:Parameter",
+      "domain": "stats:StatModel",
+      "status": "testing"
+    },
 
     {
       "@id": "stats:ModelCalibration",
@@ -353,7 +353,7 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:optimalParameter",
+      "@id": "stats:parameterEstimates",
       "@type": "rdf:Property",
       "label": "optimalParameter",
       "comment": "Optimal parameter.",
@@ -550,6 +550,39 @@ exports.stats = {
       "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
       "range": "stats:Parameter",
       "domain": "stats:ProbabilityDistribution",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Parameter",
+      "@type": "rdfs:Class",
+      "label": "Parameter",
+      "comment":"Parameter",
+      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:prior",
+      "@type": "rdf:Property",
+      "label": "Prior distribution",
+      "comment":"Prior distribution.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
+      "range": "stats:ProbabilityDistribution",
+      "domain": "stats:Parameter",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:estimate",
+      "@type": "rdf:Property",
+      "label": "Estimate",
+      "comment":"Parameter estimate.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Estimation_statistics",
+      "range": "stats:Statistic",
+      "domain": "stats:Parameter",
       "status": "testing"
     }
 
