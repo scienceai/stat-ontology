@@ -401,7 +401,7 @@ exports.stats = {
       "label": "Trace",
       "comment": "Trajectory of the Monte Carlo Markov Chaib.",
       "seeAlso": "http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo",
-      "range": "stat:Parameter",
+      "range": "schema:Dataset",
       "domain": "stats:MCMC",
       "status": "testing"
     },
