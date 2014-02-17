@@ -37,6 +37,18 @@ exports.stats = {
   },
   "@id": "http://standardanalytics.io/stats",
   "defines": [
+
+    {
+      "@id": "stats:statModel",
+      "@type": "rdf:Property",
+      "label": "statistical Model",
+      "comment": "Statistical model hypothethised to explain observed data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
+      "range": "stats:StatModel",
+      "domain": "schema:Dataset",
+      "status": "testing"
+    },
+
     {
       "@id": "stats:StatTest",
       "@type": "rdfs:Class",
@@ -245,44 +257,34 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:aic",
+      "@id": "stats:modelFormula",
       "@type": "rdf:Property",
-      "label": "Akaike Information Criterium",
-      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Akaike_information_criterion",
-      "range": "xsd:float",
-      "domain": "stats:StatModel",
+      "label": "Model formula",
+      "comment": "Concise way of expressing the hypothesised relation between explained and explanatory variables.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Formula",
+      "range": "xsd:string",
+      "domain": "stats:LinearModel",
       "status": "testing"
     },
     {
-      "@id": "stats:bic",
+      "@id": "stats:modelCalibration",
       "@type": "rdf:Property",
-      "label": "Bayesian Information Criterium",
-      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Bayesian_information_criterion",
-      "range": "xsd:float",
-      "domain": "stats:StatModel",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:loglik",
-      "@type": "rdf:Property",
-      "label": "log-Likelihood",
-      "comment": "Log-probability of observing the data under the model assumptions and given parameter values.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Log-likelihood",
-      "range": "xsd:float",
+      "label": "Model fit",
+      "comment": "Calibration of the model parameters against the data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Calibration_(statistics)",
+      "range": "stats:ModelCalibration",
       "domain": "stats:StatModel",
       "status": "testing"
     },
 
     {
-      "@id": "stats:LinearModel",
+      "@id": "stats:ModelCalibration",
       "@type": "rdfs:Class",
-      "label": "Linear model",
-      "comment": "In a linear model, data are modeled using linear predictor functions, and unknown model parameters are estimated from the data.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Linear_model",
+      "label": "Model calibration",
+      "comment": "Calibration of the model parameters against the data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Calibration_(statistics)",
       "subClassOf": [
-        "stats:StatModel"
+        "schema:Intangible"
       ],
       "status": "testing"
     },
@@ -294,7 +296,7 @@ exports.stats = {
       "comment": "Coefficient of determination, pronounced R squared, that indicates how well data points fit a line or curve.",
       "seeAlso": "http://en.wikipedia.org/wiki/R_squared",
       "range": "xsd:float",
-      "domain": "stats:LinearModel",
+      "domain": "stats:ModelCalibration",
       "status": "testing"
     },
     {
@@ -304,38 +306,60 @@ exports.stats = {
       "comment": "The adjusted R2 is an attempt to take account of the phenomenon of the R2 automatically and spuriously increasing when extra explanatory variables are added to the model.",
       "seeAlso": "http://en.wikipedia.org/wiki/R_squared#Adjusted_R2",
       "range": "xsd:float",
-      "domain": "stats:LinearModel",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:fRatioTest",
-      "@type": "rdf:Property",
-      "label": "F-Ratio Test",
-      "comment": " Used to identify the model that best fits the data.",
-      "seeAlso": "http://en.wikipedia.org/wiki/F-test",
-      "range": "stats:StatTest",
-      "domain": "stats:LinearModel",
+      "domain": "stats:ModelCalibration",
       "status": "testing"
     },
 
     {
-      "@id": "stats:modelFormula",
+      "@id": "stats:OptimalFit",
+      "@type": "rdfs:Class",
+      "label": "Optimal Fit",
+      "comment": "Model fit obtained by maximizing a fitness criteria.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
+      "subClassOf": [
+        "stats:ModelCalibration"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:aic",
       "@type": "rdf:Property",
-      "label": "Model formula",
-      "comment": "Concise way of expressing the hypothesised relation between explained and explanatory variables.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Formula",
-      "range": "xsd:string",
-      "domain": "stats:LinearModel",
+      "label": "Akaike Information Criterion",
+      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Akaike_information_criterion",
+      "range": "xsd:float",
+      "domain": "stats:OptimalFit",
       "status": "testing"
     },
     {
-      "@id": "stats:modelCoefficients",
+      "@id": "stats:bic",
       "@type": "rdf:Property",
-      "label": "Model coefficients",
-      "comment": "Coefficients of the regression model.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Regression_coefficient",
-      "range": "stats:Statistic",
-      "domain": "stats:LinearModel",
+      "label": "Bayesian Information Criterion",
+      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Bayesian_information_criterion",
+      "range": "xsd:float",
+      "domain": "stats:OptimalFit",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:fitCriterion",
+      "@type": "rdf:Property",
+      "label": "fit Criterion",
+      "comment": "Fitness criterion that has been optimized.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Likelihood_function",
+      "range": "xsd:string",
+      "domain": "stats:OptimalFit",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:optimalParameter",
+      "@type": "rdf:Property",
+      "label": "optimalParameter",
+      "comment": "Optimal parameter.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
+      "range": "stats:Parameter",
+      "domain": "stats:OptimalFit",
       "status": "testing"
     },
     {
@@ -345,7 +369,62 @@ exports.stats = {
       "comment": "Collection of statistical models used to analyze the differences between group means and their associated procedures (such as 'variation' among and between groups).",
       "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "range": "stats:ANOVARow",
-      "domain": "stats:LinearModel",
+      "domain": "stats:OptimalFit",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:MCMC",
+      "@type": "rdfs:Class",
+      "label": "Monte Carlo Markov Chain",
+      "comment": "Calibration of the model by Monte Carlo Markov Chain.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo",
+      "subClassOf": [
+        "stats:ModelCalibration"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:dic",
+      "@type": "rdf:Property",
+      "label": "Deviance Information Criterion",
+      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Deviance_information_criterion",
+      "range": "xsd:float",
+      "domain": "stats:MCMC",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:trace",
+      "@type": "rdf:Property",
+      "label": "Trace",
+      "comment": "Trajectory of the Monte Carlo Markov Chaib.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo",
+      "range": "stat:Parameter",
+      "domain": "stats:MCMC",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:ess",
+      "@type": "rdf:Property",
+      "label": "Effective Sampling Size",
+      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
+      "range": "xsd:float",
+      "domain": "stats:MCMC",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:LinearModel",
+      "@type": "rdfs:Class",
+      "label": "Linear model",
+      "comment": "Model based on linear predictor functions.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Linear_model",
+      "subClassOf": [
+        "stats:StatModel"
+      ],
       "status": "testing"
     },
 
@@ -437,8 +516,42 @@ exports.stats = {
       "range": "xsd:string",
       "domain": "stats:GeneralizedLinearModel",
       "status": "testing"
-    }
+    },
 
+    {
+      "@id": "stats:HierarchicalBayesianModel",
+      "@type": "rdfs:Class",
+      "label": "Hierarchical Bayesian Model",
+      "comment":"Hierarchical Bayesian Model",
+      "seeAlso": "http://en.wikipedia.org/wiki/Hierarchical_Bayesian_model",
+      "subClassOf": [
+        "stats:StatModel"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:ProbabilityDistribution",
+      "@type": "rdfs:Class",
+      "label": "Probability Distribution",
+      "comment":"Probability distribution.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+    
+    {
+      "@id": "stats:distributionParameter",
+      "@type": "rdf:Property",
+      "label": "Distribution parameter",
+      "comment":"Distribution parameter.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
+      "range": "stats:Parameter",
+      "domain": "stats:ProbabilityDistribution",
+      "status": "testing"
+    }
 
   ],
   "@type": "owl:Ontology",
