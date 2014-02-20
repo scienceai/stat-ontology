@@ -276,6 +276,16 @@ exports.stats = {
       "domain": "stats:StatisticalModel",
       "status": "testing"
     },
+    {
+      "@id": "stats:modelNotation",
+      "@type": "rdf:Property",
+      "label": "Model notation",
+      "comment": "Model notation.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Model_parameter",
+      "range": "schema:QuantitativeValue",
+      "domain": "stats:StatisticalModel",
+      "status": "testing"
+    },
 
     {
       "@id": "stats:ModelFit",
