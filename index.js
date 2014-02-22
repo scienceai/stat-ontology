@@ -39,54 +39,6 @@ exports.stats = {
   "defines": [
 
     {
-      "@id": "stats:SampleSequence",
-      "@type": "rdfs:Class",
-      "label": "Sample sequence.",
-      "comment": "Sequence of samples from a given target distribution.",
-      "seeAlso": "https://en.wikipedia.org/wiki/Sample_(statistics)",
-      "subClassOf": [
-        "schema:Dataset"
-      ],
-      "status": "testing"
-    },
-    
-    {
-      "@id": "stats:StatisticalResult",
-      "@type": "rdfs:Class",
-      "label": "Statistical result.",
-      "comment": "Statistical result.",
-      "seeAlso": "https://en.wikipedia.org/wiki/Sample_(statistics)",
-      "subClassOf": [
-        "schema:Dataset"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:Prior",
-      "@type": "rdfs:Class",
-      "label": "Statistical result.",
-      "comment": "Statistical result.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "subClassOf": [
-        "schema:Dataset"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:Configuration",
-      "@type": "rdfs:Class",
-      "label": "Configuration.",
-      "comment": "Configuration.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Configuration_file",
-      "subClassOf": [
-        "schema:Dataset"
-      ],
-      "status": "testing"
-    },
-
-    {
       "@id": "stats:StatisticalTest",
       "@type": "rdfs:Class",
       "label": "Statistical test",
