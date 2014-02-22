@@ -75,6 +75,18 @@ exports.stats = {
     },
 
     {
+      "@id": "stats:Configuration",
+      "@type": "rdfs:Class",
+      "label": "Configuration.",
+      "comment": "Configuration.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Configuration_file",
+      "subClassOf": [
+        "schema:Dataset"
+      ],
+      "status": "testing"
+    },
+
+    {
       "@id": "stats:StatisticalTest",
       "@type": "rdfs:Class",
       "label": "Statistical test",
