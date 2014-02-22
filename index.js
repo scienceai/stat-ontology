@@ -39,13 +39,38 @@ exports.stats = {
   "defines": [
 
     {
-      "@id": "stats:statModel",
-      "@type": "rdf:Property",
-      "label": "statistical Model",
-      "comment": "Statistical model hypothethised to explain observed data.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
-      "range": "stats:StatModel",
-      "domain": "schema:Dataset",
+      "@id": "stats:SampleSequence",
+      "@type": "rdfs:Class",
+      "label": "Sample sequence.",
+      "comment": "Sequence of samples from a given target distribution.",
+      "seeAlso": "https://en.wikipedia.org/wiki/Sample_(statistics)",
+      "subClassOf": [
+        "schema:Dataset"
+      ],
+      "status": "testing"
+    },
+    
+    {
+      "@id": "stats:StatisticalResult",
+      "@type": "rdfs:Class",
+      "label": "Statistical result.",
+      "comment": "Statistical result.",
+      "seeAlso": "https://en.wikipedia.org/wiki/Sample_(statistics)",
+      "subClassOf": [
+        "schema:Dataset"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Prior",
+      "@type": "rdfs:Class",
+      "label": "Statistical result.",
+      "comment": "Statistical result.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
+      "subClassOf": [
+        "schema:Dataset"
+      ],
       "status": "testing"
     },
 
@@ -406,16 +431,6 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:mcmcTrace",
-      "@type": "rdf:Property",
-      "label": "MCMC Trace",
-      "comment": "MCMC trajectory in the parameter space.",
-      "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
-      "range": "schema:Dataset",
-      "domain": "stats:MCMC",
-      "status": "testing"
-    },
-    {
       "@id": "stats:mcmcAlgorithm",
       "@type": "rdf:Property",
       "label": "MCMC algorithm",
@@ -432,6 +447,16 @@ exports.stats = {
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
       "range": "xsd:float",
+      "domain": "stats:MCMC",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:mcmcTrace",
+      "@type": "rdf:Property",
+      "label": "MCMC trace",
+      "comment": "MCMC Trace.",
+      "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
+      "range": "stats:StatisticalResult",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -563,52 +588,6 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:Prior",
-      "@type": "rdfs:Class",
-      "label": "Pior",
-      "comment":"Basyesian prior.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "subClassOf": [
-        "schema:CreativeWork"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:priorDistribution",
-      "@type": "rdf:Property",
-      "label": "Distribution parameter",
-      "comment":"Distribution parameter.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "range": "stats:Parameter",
-      "domain": "stats:Prior",
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:Posterior",
-      "@type": "rdfs:Class",
-      "label": "Probability Distribution",
-      "comment":"Probability distribution.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Posterior_probability",
-      "subClassOf": [
-        "schema:CreativeWork"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:posteriorDistribution",
-      "@type": "rdf:Property",
-      "label": "Posterior distribution",
-      "comment":"Posterior Distribution.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Posterior_probability",
-      "range": "stats:Parameter",
-      "domain": "stats:Posterior",
-      "status": "testing"
-    },
-
-    {
       "@id": "stats:ProbabilityDistribution",
       "@type": "rdfs:Class",
       "label": "Probability Distribution",
@@ -657,7 +636,7 @@ exports.stats = {
       "label": "Sample sequence",
       "comment":"Sample sequence.",
       "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
-      "range": "schema:Dataset",
+      "range": "stats:SampleSequence",
       "domain": "stats:ProbabilityDistribution",
       "status": "testing"
     },
@@ -680,29 +659,27 @@ exports.stats = {
       "label": "Prior distribution",
       "comment":"Prior distribution.",
       "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "range": "stats:ProbabilityDistribution",
+      "range": "xsd:string",
       "domain": "stats:Parameter",
       "status": "testing"
     },
-
-    {
-      "@id": "stats:posterior",
-      "@type": "rdf:Property",
-      "label": "Posterior distribution",
-      "comment":"Posterior distribution.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Posterior_probability",
-      "range": "stats:ProbabilityDistribution",
-      "domain": "stats:Parameter",
-      "status": "testing"
-    },
-
-    {
+   {
       "@id": "stats:estimate",
       "@type": "rdf:Property",
       "label": "Estimate",
       "comment":"Parameter estimate.",
       "seeAlso": "http://en.wikipedia.org/wiki/Estimation_statistics",
       "range": "stats:Statistic",
+      "domain": "stats:Parameter",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:parameterFormula",
+      "@type": "rdf:Property",
+      "label": "Estimate",
+      "comment":"Parameter estimate.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Formula",
+      "range": "xsd:string",
       "domain": "stats:Parameter",
       "status": "testing"
     }
