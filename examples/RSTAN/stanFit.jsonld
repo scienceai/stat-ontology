@@ -1,0 +1,163 @@
+{
+  "name": "stan-analysis",
+  "version": "0.0.0",
+  "description": "",
+  "isBasedOnUrl": [],
+  "license": "CC0-1.0",
+  "keywords": [
+    "example"
+  ],
+  "author": {
+    "name": "jo",
+    "email": "joseph@standardanalytics.io"
+  },
+  "code": [
+    {
+      "name": "script.R",
+      "description": "Stan example turned into hierarchical model.",
+      "programmingLanguage": {
+        "name": "R"
+      },
+      "runtime": "R",
+      "targetProduct": {
+        "operationSystem": "Unix",
+        "filePath": "script.R",
+        "requirements": [
+          "https://github.com/stan-dev/rstan"
+        ]
+      }
+    }
+  ],
+  "dataset": [
+    {
+      "name": "uniform-real-line",
+      "description": "a description",
+      "@type": "Prior",
+      "citation": "https://mu-prior-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "uniform",
+          "distributionParameter" : [
+            { "@type": "Parameter", "name" : "lower", "value" : "-inf"},
+            { "@type": "Parameter", "name" : "upper", "value" : "inf"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "uniform-positive",
+      "description": "a description",
+      "@type": "Prior",
+      "citation": "https://tau-prior-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "uniform",
+          "distributionParameter" : [
+            { "@type": "Parameter", "@type": "Parameter", "name" : "lower", "value" : "0" },
+            { "@type": "Parameter", "@type": "Parameter", "name" : "upper", "value" : "inf" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "custom-normal",
+      "description": "a description",
+      "@type": "Prior",
+      "citation": "https://eta-prior-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "normal",
+          "distributionParameter" : [
+            { "@type": "Parameter", "name" : "mean", "value" : "0" },
+            { "@type": "Parameter", "name" : "sigma", "valueReference" : " mu" },
+            { "@type": "Parameter", "name" : "lower", "value" : "-inf" },
+            { "@type": "Parameter", "name" : "upper", "value" : "inf" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "script-l15-output0",
+      "description": "stan output",
+      "type": "Analytics",
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "BayesianHierarchicalModel",
+          "modelParameter" : [
+            {
+              "@type": "Parameter",
+              "name" : "mu",
+              "prior" : "stan-analysis/0.0.0/dataset/uniform-real-line"
+            },
+            {
+              "@type": "Parameter",
+              "name" : "tau",
+              "prior" : "stan-analysis/0.0.0/dataset/uniform-positive"
+            },
+            {
+              "@type": "Parameter",
+              "name" : "eta[1]",
+              "prior" : "stan-analysis/0.0.0/dataset/custom-normal"
+            },
+            {
+              "@type": "Parameter",
+              "name" : "eta[2]",
+              "prior" : "stan-analysis/0.0.0/dataset/custom-normal"
+            }
+          ],
+          "modelNotation": [
+            { "@type": "QuantitativeValue", "name": "theta[1]", "description": "mu + tau*eta[1]"},
+            { "@type": "QuantitativeValue", "name": "theta[2]", "description": "mu + tau*eta[2]"}
+          ],
+          "modelFit" : [
+            {
+              "@type": "ModelFit", 
+              "mcmcAlgorithm" : "NUTS",
+              "mcmcTrace": "stan-analysis/0.0.0/dataset/TraceChain1"
+              "name" : "chain_1",
+              "ESS": [130.3,120.6,178.7,198.4],
+              "DIC": "-120.7"
+            },
+            {
+              "@type": "ModelFit", 
+              "mcmcAlgorithm" : "NUTS",
+              "mcmcTrace": "stan-analysis/0.0.0/dataset/TraceChain2",
+              "name" : "chain_2",
+              "ESS": [130.3,120.6,178.7,198.4],
+              "DIC": "-120.9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "TraceChain1",
+      "@type": "SimulatedDataset",
+      "about": [ 
+        { "name": "mu", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "tau", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "eta[1]", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "eta[2]", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+      ],
+      "distribution": {  "contentPath": "data/trace1.csv" }
+    },
+    {
+      "name": "TraceChain2",
+      "@type": "SimulatedDataset",
+      "about": [ 
+        { "name": "mu", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "tau", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "eta[1]", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "eta[2]", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+      ],
+      "distribution": {  "contentPath": "data/trace2.csv" }
+    }
+  ]
+}

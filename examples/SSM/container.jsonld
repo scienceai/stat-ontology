@@ -1,0 +1,76 @@
+{
+  "name": "noise-analysis",
+  "version": "0.0.0",
+  "description": "",
+  "isBasedOnUrl": [],
+  "license": "CC0-1.0",
+  "keywords": [
+    "example"
+  ],
+  "author": {
+    "name": "jo",
+    "email": "joseph@standardanalytics.io"
+  },
+
+
+  "code": [
+    {
+      "name": "SSM",
+      "description": "ssm inference routine.",
+      "programmingLanguage": { "name": "C" },
+      "codeRepository": "https://github.com/standard-analytics/ssm"
+      "runtime": "ssm",
+      "targetProduct": {
+        "operationSystem": "Unix",
+        "filePath": "bin.zip",
+	"inputs": [ 
+          "noise-analysis/0.0.0/dataset/model.jsonld",
+	  "noise-analysis/0.0.0/dataset/run1.jsonld"
+        ] 
+      }
+    }
+  ],
+
+
+  "dataset": [
+    {
+      "name": "noiseModel",
+      "@type": "Configuration",
+      "description": "noise model",
+      "distribution": {
+        "contentPath": "NoiseModel.jsonld"
+      }
+    },
+
+    {
+      "name": "TraceChain1",
+      "@type": "SimulatedDataset",
+      "isBasedOnUrl": ""noise-analysis/0.0.0/code/SSM",
+      "about": [ 
+        { "name": "prop_I", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "r0_nyc", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "r0_paris", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "inv_v", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "rep_all", "valueType": "xsd:float", "sameAs": "http://schema.org/name"}
+      ],
+      "distribution": {
+        "contentPath": "data/trace1.csv",
+      }
+    },
+    {
+      "name": "TraceChain2", 
+      "@type": "SimulatedDataset",
+      "isBasedOnUrl": ""noise-analysis/0.0.0/code/SSM",
+      "about": [ 
+        { "name": "prop_I", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "r0_nyc", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "r0_paris", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "inv_v", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "rep_all", "valueType": "xsd:float", "sameAs": "http://schema.org/name"}
+      ],
+      "distribution": {
+        "contentPath": "data/trace2.csv",
+      }
+    }
+  ]
+}
