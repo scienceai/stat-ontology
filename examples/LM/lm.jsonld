@@ -1,0 +1,235 @@
+{
+  "name": "analysis",
+  "version": "0.0.0",
+  "description": "",
+  "isBasedOnUrl": [],
+  "license": "CC0-1.0",
+  "keywords": [
+    "script"
+  ],
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "code": [
+    {
+      "name": "script.R",
+      "description": "",
+      "programmingLanguage": {
+        "name": "R"
+      },
+      "runtime": "R",
+      "targetProduct": {
+        "operationSystem": "Unix",
+        "input": [
+          "analysis/0.0.0/dataset/iris",
+          "analysis/0.0.0/dataset/iris2"
+        ],
+        "filePath": "script.R",
+        "requirements": [
+          "http://cran.r-project.org/web/packages/gdata/index.html"
+        ]
+      }
+    }
+  ],
+  "dataset": [
+    {
+      "name": "script-l12-output0",
+      "isBasedOnUrl": [ "analysis/0.0.0/code/script.R?line=12"],
+      "description": "",
+      "@type": "Analytics",
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "LinearModel",
+          "modelFormula": "Petal.Length ~ Species",
+	  "modelFit": {
+            "anova": [
+              {
+                "@type": "ANOVAFactor",
+                "name": "Species",
+                "sumOfSquares": 437.1,
+                "meanOfSquares": 218.55,
+                "statisticalTest": {
+                  "@type": "FTest",
+                  "testStatistic": 1180.2,
+                  "degreesOfFreedomNumerator": 2,
+                  "degreesOfFreedomDenominator": 147,
+                  "pValue": 2.8568e-91
+                }
+              },
+              {
+                "@type": "ANOVAResidual",
+                "sumOfSquares": 27.223,
+                "meanOfSquares": 0.18519
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "script-l15-output0",
+      "isBasedOnUrl": [ "analysis/0.0.0/code/script.R?line=15" ],
+      "description": "",
+      "@type": "Analytics",
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "LinearModel",
+          "modelFormula": "Petal.Length ~ Species * Sepal.Width",
+	  "modelFit": {
+            "anova": [
+              {
+                "@type": "ANOVAFactor",
+                "name": "Species",
+                "sumOfSquares": 437.1,
+                "meanOfSquares": 218.55,
+                "statisticalTest": {
+                  "@type": "FTest",
+                  "testStatistic": 1472.3,
+                  "degreesOfFreedomNumerator": 2,
+                  "dfDenom": 144,
+                  "pValue": 1.3795e-96
+                }
+              },
+              {
+                "@type": "ANOVAFactor",
+                "name": "Sepal.Width",
+                "sumOfSquares": 3.8879,
+                "meanOfSquares": 3.8879,
+                "statisticalTest": {
+                  "@type": "FTest",
+                  "testStatistic": 26.191,
+                  "degreesOfFreedomNumerator": 1,
+                  "dfDenom": 144,
+                  "pValue": 9.7263e-7
+                }
+              },
+              {
+                "@type": "ANOVAFactor",
+                "name": "Species:Sepal.Width",
+                "sumOfSquares": 1.9587,
+                "meanOfSquares": 0.97933,
+                "statisticalTest": {
+                  "@type": "FTest",
+                  "testStatistic": 6.5973,
+                  "degreesOfFreedomNumerator": 2,
+                  "dfDenom": 144,
+                  "pValue": 0.0018139
+                }
+              },
+              {
+                "@type": "ANOVAResidual",
+                "sumOfSquares": 21.376,
+                "meanOfSquares": 0.14844
+              }
+            ]
+          }
+        }
+      } 
+    },
+    {
+      "name": "script-l6-output0",
+      "isBasedOnUrl": [  "analysis/0.0.0/code/script.R?line=6" ],
+      "description": "",
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "LinearModel",
+          "modelFormula": "Petal.Length ~ Petal.Width",
+          "r2": 0.92711,
+          "adjr2": 0.92662,
+          "fRatioTest": {
+            "@type": "FTest",
+            "testStatistic": 1882.5,
+            "degreesOfFreedomNumerator": 1,
+            "dfDenom": 148,
+            "pValue": 4.675e-86
+          },
+          "modelCoefficients": [
+            {
+              "name": "(Intercept)",
+              "estimate": 1.0836,
+              "standardError": 0.072967,
+              "statisticalTest": {
+                "@type": "TTest",
+                "testStatistic": 14.85,
+                "degreesOfFreedom": 148,
+                "pValue": 4.0433e-31
+              }
+            },
+            {
+              "name": "Petal.Width",
+              "estimate": 2.2299,
+              "standardError": 0.051396,
+              "statisticalTest": {
+                "@type": "TTest",
+                "testStatistic": 43.387,
+                "degreesOfFreedom": 148,
+                "pValue": 4.675e-86
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "script-l9-output0",
+      "isBasedOnUrl": [ "analysis/0.0.0/code/script.R?line=9"],
+      "description": "",
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "LinearModel",
+          "modelFormula": "iris$Petal.Length ~ iris$Sepal.Width",
+          "r2": 0.18356,
+          "adjr2": 0.17804,
+          "fRatioTest": {
+            "@type": "FTest",
+            "testStatistic": 33.275,
+            "degreesOfFreedomNumerator": 1,
+            "degreesOfFreedomDenominator": 148,
+            "pValue": 4.5133e-8
+          },
+          "modelCoefficients": [
+            {
+              "name": "(Intercept)",
+              "estimate": 9.0632,
+              "standardError": 0.92892,
+              "statisticalTest": {
+                "@type": "TTest",
+                "testStatistic": 9.7566,
+                "degreesOfFreedom": 148,
+                "pValue": 1.1336e-17
+              }
+            },
+            {
+              "name": "iris$Sepal.Width",
+              "estimate": -1.7352,
+              "standardError": 0.30081,
+              "statisticalTest": {
+                "@type": "TTest",
+                "testStatistic": -5.7684,
+                "degreesOfFreedom": 148,
+                "pValue": 4.5133e-8
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "figure": [
+    {
+      "name": "irisplot.jpg",
+      "contentPath": ".irisplot.jpg",
+      "encodingFormat": ".jpg"
+    },
+    {
+      "name": "irisplot2.jpg",
+      "contentPath": "irisplot2.jpg",
+      "encodingFormat": ".jpg"
+    }
+  ]
+}
