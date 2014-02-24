@@ -1,0 +1,97 @@
+{
+  "name": "glm-simplex",
+  "version": "0.0.0",
+  "description": "",
+  "isBasedOnUrl": [],
+  "license": "CC0-1.0",
+  "keywords": [
+    "example"
+  ],
+  "author": {
+    "name": "jo",
+    "email": "joseph@standardanalytics.io"
+  },
+  "code": [
+    {
+      "name": "script.R",
+      "description": "glm calibration with simplex algorithm",
+      "programmingLanguage": {
+        "name": "R"
+      },
+      "runtime": "R",
+      "targetProduct": {
+        "operationSystem": "Unix",
+        "filePath": "script.R",
+        "requirements": [
+          "http://cran.r-project.org/web/packages/lme4/index.html"
+        ]
+      }
+    }
+  ],
+  "dataset": [
+    {
+      "name": "script-output",
+      "description": "optimization output",
+      "@type": "Analytics",
+      "isBasedOnUrl": "glm-simplex/0.0.0/dataset/script.R"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "GeneralizedLinearModel",
+	  "modelFormula": "log(volume)~log(girth)",
+          "modelParameter" : [
+            {
+              "@type": "Parameter",
+              "name" : "intercept"
+            },
+            {
+              "@type": "Parameter",
+              "name" : "log(girth)" 
+            }
+          ],
+          "modelFit" : [
+            {
+              "@type": "FitnessOptimization", 
+	      "fitnessCriterion": "log-likelihood"
+              "akaikeInformationCriterion" : "-120.5",
+	      "optimizationTrajectory": "glm-simplex/0.0.0/dataset/SimplexTrace"
+	      "optimalParameter": [
+	        { "name": "intercept", 
+                  "estimate": { 
+                    "value": "3.5", 
+                    "statisticalTest" : {
+		      "description": "is this coefficient significantly non-zero?"
+		      "@type": "ZTest",
+		      "testStatistic": "2.3",
+		      "pValue": "0.014" 
+		    }
+                  },
+                },
+		{ "name": "log(girth)", 
+                  "estimate": { 
+                    "value": "2.5", 
+                    "statisticalTest" : {
+		      "description": "is this coefficient significantly non-zero?"
+		      "@type": "ZTest",
+		      "testStatistic": "2.3",
+		      "pValue": "0.001" 
+		    }
+                  }
+		}
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "SimplexTrace",
+      "@type": "SimulatedDataset",
+      "about": [ 
+        { "name": "intercept", "valueType": "xsd:float", "sameAs": "http://schema.org/name"},
+        { "name": "log(girth)", "valueType": "xsd:float", "sameAs": "http://schema.org/name"}
+      ],
+      "distribution": {  "contentPath": "data/trace1.csv" }
+    }
+  ]
+}

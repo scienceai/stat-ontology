@@ -1,0 +1,180 @@
+{
+  "name": "ssm-pmcmc",
+  "version": "0.0.0",
+  "description": "",
+  "isBasedOnUrl": [],
+  "license": "CC0-1.0",
+  "keywords": [
+    "example"
+  ],
+  "author": {
+    "name": "jo",
+    "email": "joseph@standardanalytics.io"
+  },
+
+
+  "code": [
+     {
+      "name": "SSM",
+      "description": "ssm inference routine.",
+      "programmingLanguage": { "name": "C" },
+      "codeRepository": "https://github.com/standard-analytics/ssm"
+      "runtime": "ssm",
+      "targetProduct": {
+        "operationSystem": "Unix",
+        "filePath": "bin.zip",
+	"inputs": [ 
+          "ssm-pmcmc/0.0.0/dataset/alpha-prior",
+          "ssm-pmcmc/0.0.0/dataset/S-prior",
+          "ssm-pmcmc/0.0.0/dataset/I-prior",
+          "ssm-pmcmc/0.0.0/dataset/model",
+          "ssm-pmcmc/0.0.0/dataset/data",
+        ] 
+      }
+    }
+  ],
+
+
+  "dataset": [
+
+    {
+      "name": "model",
+      "@type": "Configuration",
+      "description": "model",
+      "distribution": {
+        "contentPath": "model.json"
+      }
+    },
+
+    {
+      "name": "data",
+      "@type": "EmpiricalDataset",
+      "about": [ 
+        { "name": "obs", "valueType": "xsd:float", "sameAs": "http://schema.org/name"}
+      ],
+      "distribution": {  "contentPath": "data/data.csv" }
+    }
+
+    {
+      "name": "data",
+      "description": "a description",
+      "@type": "EmpiricalDataset",
+      "citation": "https://data-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "uniform",
+          "distributionParameter" : [
+            { "@type": "Parameter", "name" : "lower", "value" : "1"},
+            { "@type": "Parameter", "name" : "upper", "value" : "10"}
+          ]
+        }
+      }
+    },
+
+    {
+      "name": "script-output",
+      "description": "pmcmc output",
+      "@type": "Analytics",
+      "isBasedOnUrl": "ssm-pmcmc/0.0.0/dataset/SSM",
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "StateSpaceModel",
+
+	  "modelFormula": {
+	    "population": { "name": "city", "composition": [ "S", "I" ] },
+	    "reactions": { "from": "S", "to": "I", "rate": "alpha*S" },
+	    "observations": { "name": "obs", "start": "2014-01-01", "distribution": "discretized_normal",
+	                               "mean": "I", "sd": "0.1*I" },
+	    "data": { "name": "obs", "require": { "url": "ssm-pmcmc/0.0.0/dataset/data" } },
+	    "inputs": [
+	      { "name": "S", "require": { "url": "ssm-pmcmc/0.0.0/dataset/S-prior" } },
+	      { "name": "I", "require": { "url": "ssm-pmcmc/0.0.0/dataset/I-prior" } },
+	      { "name": "alpha", "require": { "url": "ssm-pmcmc/0.0.0/dataset/apha-prior" } }
+	    ]
+	  }
+
+          "modelParameter" : [
+            {  "@type": "Parameter", "name" : "S", "prior": "ssm-pmcmc/0.0.0/dataset/S-prior" }, 
+            {  "@type": "Parameter", "name" : "I", "prior": "ssm-pmcmc/0.0.0/dataset/I-prior" }, 
+            {  "@type": "Parameter", "name" : "alpha", "prior": "ssm-pmcmc/0.0.0/dataset/alpha-prior" } 
+          ],
+
+          "modelFit" : [
+            {
+              "@type": "MCMC", 
+	      "mcmcAlgorithm": "pmcmcTrace",
+	      "mcmcTrace": "ssm-pmcmc/0.0.0/dataset/SSM"
+	      "effectiveSampleSize": "130.3", 
+	      "dic": "130.3"
+	    }
+          ]
+        }
+      }
+    },
+
+    {
+      "name": "alpha-prior",
+      "description": "a description",
+      "@type": "Prior",
+      "citation": "https://alpha-prior-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "uniform",
+          "distributionParameter" : [
+            { "@type": "Parameter", "name" : "lower", "value" : "1"},
+            { "@type": "Parameter", "name" : "upper", "value" : "10"}
+          ]
+        }
+      }
+    },
+
+    {
+      "name": "S-prior",
+      "description": "a description",
+      "@type": "Prior",
+      "citation": "https://S-prior-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "dirac",
+          "distributionParameter" : [
+            { "@type": "Parameter", "name" : "support", "value" : "100"}
+          ]
+        }
+      }
+    },
+
+    {
+      "name": "I-prior",
+      "description": "a description",
+      "@type": "Prior",
+      "citation": "https://I-prior-reference.com"
+      "distribution": {
+        "contentData": {
+          "@context": { "@vocab": "http://standardanalytics.io/stats/" },
+          "@type": "ProbabilityDistribution",
+          "name" : "dirac",
+          "distributionParameter" : [
+            { "@type": "Parameter", "name" : "support", "value" : "100"}
+          ]
+        }
+      }
+    },
+
+    {
+      "name": "pmcmcTrace",
+      "@type": "SimulatedDataset",
+      "about": [ 
+        { "name": "alpha", "valueType": "xsd:float", "sameAs": "http://schema.org/name"}
+      ],
+      "distribution": {  "contentPath": "data/trace1.csv" }
+    }
+
+  ]
+}

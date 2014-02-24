@@ -90,6 +90,28 @@
         "contentData": {
           "@context": { "@vocab": "http://standardanalytics.io/stats/" },
           "@type": "BayesianHierarchicalModel",
+
+	  "modelFormula": 
+	    "data {
+	      int<lower=0> J; // number of schools 
+  	      real y[J]; // estimated treatment effects
+	        real<lower=0> sigma[J]; // s.e. of effect estimates 
+	     }
+	     parameters {
+	       real mu; 
+	       real<lower=0> tau;
+  	       real eta[J];
+             }
+	     transformed parameters {
+	       real theta[J];
+	       for (j in 1:J)
+	           theta[j] <- mu + tau * eta[j]; 
+	     }
+	     model {
+ 	      eta ~ normal(0, mu);
+ 	       y ~ normal(theta, sigma);
+	     }"
+
           "modelParameter" : [
             {
               "@type": "Parameter",
@@ -122,16 +144,16 @@
               "mcmcAlgorithm" : "NUTS",
               "mcmcTrace": "stan-analysis/0.0.0/dataset/TraceChain1"
               "name" : "chain_1",
-              "ESS": [130.3,120.6,178.7,198.4],
-              "DIC": "-120.7"
+              "effectiveSampleSize": [130.3,120.6,178.7,198.4],
+              "dic": "-120.7"
             },
             {
               "@type": "ModelFit", 
               "mcmcAlgorithm" : "NUTS",
               "mcmcTrace": "stan-analysis/0.0.0/dataset/TraceChain2",
               "name" : "chain_2",
-              "ESS": [130.3,120.6,178.7,198.4],
-              "DIC": "-120.9"
+              "effectiveSampleSize": [130.3,120.6,178.7,198.4],
+              "dic": "-120.9"
             }
           ]
         }

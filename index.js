@@ -372,6 +372,16 @@ exports.stats = {
       "status": "testing"
     },
     {
+      "@id": "stats:optimalCriterionValue",
+      "@type": "rdf:Property",
+      "label": "Optimal criterion value.",
+      "comment": "Optimal criterion value.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
+      "range": "xsd:float",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
+    {
       "@id": "stats:anova",
       "@type": "rdf:Property",
       "label": "Analysis of Variance",
