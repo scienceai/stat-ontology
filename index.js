@@ -251,7 +251,7 @@ exports.stats = {
       "label": "Model fit",
       "comment": "Fit of model.",
       "seeAlso": "http://en.wikipedia.org/wiki/Calibration_(statistics)",
-      "range": "stats:ModelCalibration",
+      "range": "stats:ModelFit",
       "domain": "stats:StatisticalModel",
       "status": "testing"
     },
