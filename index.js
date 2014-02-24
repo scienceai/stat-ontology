@@ -322,7 +322,7 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:akaikeInformationCriterion",
+      "@id": "stats:aic",
       "@type": "rdf:Property",
       "label": "Akaike Information Criterion",
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
@@ -332,7 +332,17 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:bayesianInformationCriterion",
+      "@id": "stats:aicc",
+      "@type": "rdf:Property",
+      "label": "Corrected Akaike Information Criterion",
+      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Akaike_information_criterion",
+      "range": "xsd:float",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:bic",
       "@type": "rdf:Property",
       "label": "Bayesian Information Criterion",
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
@@ -385,7 +395,7 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:devianceInformationCriterion",
+      "@id": "stats:dic",
       "@type": "rdf:Property",
       "label": "Deviance Information Criterion",
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
