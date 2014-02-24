@@ -382,12 +382,22 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:anova",
+      "@id": "stats:optimalCriterionValue",
       "@type": "rdf:Property",
-      "label": "Analysis of Variance",
-      "comment": "Collection of statistical models used to analyze the differences between group means and their associated procedures (such as 'variation' among and between groups).",
-      "seeAlso": "http://en.wikipedia.org/wiki/Anova",
-      "range": "stats:ANOVARow",
+      "label": "Optimal criterion value.",
+      "comment": "Optimal criterion value.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
+      "range": "xsd:float",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:optimizationTrajectory",
+      "@type": "rdf:Property",
+      "label": "OptimizationTrajectory",
+      "comment": "Optimization Trajectory.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
+      "range": "stats:SimulatedDataset",
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
@@ -441,7 +451,7 @@ exports.stats = {
       "comment": "MCMC Trace.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
       "range": "stats:StatisticalResult",
-      "domain": "stats:MCMC",
+      "domain": "stats:SimulatedDataset",
       "status": "testing"
     },
 
