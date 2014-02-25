@@ -1,5 +1,6 @@
 exports.stats = {
   "@context": {
+    "ctnr": "http://standardanalytics.io/ctnr",
     "stats": "http://standardanalytics.io/stats/",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -114,7 +115,7 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:degreesOfFreedom",
+      "@id": "stats:df",
       "@type": "rdf:Property",
       "label": "Number of degrees of freedom",
       "comment": "The number of degrees of freedom is the number of values in the final calculation of a statistic that are free to vary.",
@@ -125,7 +126,7 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:degreesOfFreedomfNumerator",
+      "@id": "stats:dfNum",
       "@type": "rdf:Property",
       "label": "Number of degrees of freedom",
       "comment": "Number of degrees of freedom of the numerator.",
@@ -135,7 +136,7 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:degreesOfFreedomDenominator",
+      "@id": "stats:dfDenom",
       "@type": "rdf:Property",
       "label": "Number of degrees of freedom",
       "comment": "Number of degrees of freedom of the denominator.",
@@ -236,16 +237,6 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:modelFormula",
-      "@type": "rdf:Property",
-      "label": "Model formula",
-      "comment": "Concise way of expressing the hypothesised relation between explained and explanatory variables.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Formula",
-      "range": "xsd:string",
-      "domain": "stats:StatisticalModel",
-      "status": "testing"
-    },
-    {
       "@id": "stats:modelFit",
       "@type": "rdf:Property",
       "label": "Model fit",
@@ -308,6 +299,27 @@ exports.stats = {
       "domain": "stats:ModelFit",
       "status": "testing"
     },
+    {
+      "@id": "stats:ndata",
+      "@type": "rdf:Property",
+      "label": "Number of data points",
+      "comment": "Number of data points.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Data_point",
+      "range": "xsd:integer",
+      "domain": "stats:ModelFit",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:nparameters",
+      "@type": "rdf:Property",
+      "label": "Number of parameters",
+      "comment": "Number of parameters.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
+      "range": "xsd:integer",
+      "domain": "stats:ModelFit",
+      "status": "testing"
+    },
+
 
     {
       "@id": "stats:FitnessOptimization",
@@ -397,7 +409,17 @@ exports.stats = {
       "label": "OptimizationTrajectory",
       "comment": "Optimization Trajectory.",
       "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
-      "range": "stats:SimulatedDataset",
+      "range": "ctnr:SimulatedDataset",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:anova",
+      "@type": "rdf:Property",
+      "label": "Analysis of variance",
+      "comment": "Analysis of variance.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Analysis_of_variance",
+      "range": "stats:Statistic",
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
@@ -430,7 +452,7 @@ exports.stats = {
       "label": "MCMC algorithm",
       "comment": "MCMC algorithm.",
       "seeAlso": "http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo",
-      "range": "xsd:string",
+      "range": "schema:Thing",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -440,7 +462,7 @@ exports.stats = {
       "label": "Effective Sample Size",
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
-      "range": "xsd:float",
+      "range": "stats:Statistic",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -450,8 +472,8 @@ exports.stats = {
       "label": "MCMC trace",
       "comment": "MCMC Trace.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
-      "range": "stats:StatisticalResult",
-      "domain": "stats:SimulatedDataset",
+      "range": "ctnr:SimulatedDataset",
+      "domain": "stats:MCMC",
       "status": "testing"
     },
 
@@ -505,6 +527,16 @@ exports.stats = {
       "label": "Mean of Squares",
       "comment": "Mean of squares.",
       "seeAlso": "http://en.wikipedia.org/wiki/Partition_of_sums_of_squares",
+      "range": "xsd:float",
+      "domain": "stats:ANOVARow",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:sumOfSquaresType",
+      "@type": "rdf:Property",
+      "label": "Sum of Squares Type",
+      "comment": "sum of Squares Type.",
+      "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
       "range": "xsd:float",
       "domain": "stats:ANOVARow",
       "status": "testing"
@@ -582,17 +614,68 @@ exports.stats = {
     },
 
     {
+      "@id": "stats:ModelSelection",
+      "@type": "rdfs:Class",
+      "label": "Model Selection",
+      "comment": "Model Selection.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:modelSet",
+      "@type": "rdf:Property",
+      "label": "Model set",
+      "comment":"Model set.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
+      "range": "xsd:string",
+      "domain": "stats:ModelSelection",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:selectedModel",
+      "@type": "rdf:Property",
+      "label": "Selected model",
+      "comment":"Selected model.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
+      "range": "xsd:string",
+      "domain": "stats:ModelSelection",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:selectedModel",
+      "@type": "rdf:Property",
+      "label": "Selected model",
+      "comment":"Selected model.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
+      "range": "xsd:string",
+      "domain": "stats:ModelSelection",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:selectionCriterion",
+      "@type": "rdf:Property",
+      "label": "Selection criterion",
+      "comment":"Selection criterion.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
+      "range": "stats:Statistic",
+      "domain": "stats:ModelSelection",
+      "status": "testing"
+    },
+
+    {
       "@id": "stats:ProbabilityDistribution",
       "@type": "rdfs:Class",
-      "label": "Probability Distribution",
+      "label": "Probability distribution",
       "comment":"Probability distribution.",
       "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
       "subClassOf": [
         "schema:Intangible"
       ],
       "status": "testing"
-    },
-    
+    },    
     {
       "@id": "stats:distributionType",
       "@type": "rdf:Property",
@@ -668,13 +751,13 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:parameterFormula",
+      "@id": "stats:formula",
       "@type": "rdf:Property",
-      "label": "Estimate",
-      "comment":"Parameter estimate.",
+      "label": "Formula",
+      "comment":"Formula.",
       "seeAlso": "http://en.wikipedia.org/wiki/Formula",
       "range": "xsd:string",
-      "domain": "stats:Parameter",
+      "domain": ["stats:Parameter", "stats:StatisticalModel"],
       "status": "testing"
     }
 
