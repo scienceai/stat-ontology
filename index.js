@@ -1,6 +1,6 @@
 exports.stats = {
   "@context": {
-    "ctnr": "http://standardanalytics.io/ctnr",
+    "container": "http://standardanalytics.io/container",
     "stats": "http://standardanalytics.io/stats/",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -180,6 +180,41 @@ exports.stats = {
     },
 
     {
+      "@id": "stats:RawStatistics",
+      "@type": "rdfs:Class",
+      "label": "Raw Statistics",
+      "comment": "Raw Statistics.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Data",
+      "subClassOf": [
+        "stats:Statistic", "container:EmpiricalDataset"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:ContingencyTable",
+      "@type": "rdfs:Class",
+      "label": "ContingencyTable",
+      "comment": "Table that displays the (multivariate) frequency distribution of the variables.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Contingency_table",
+      "subClassOf": [
+        "stats:Statistic", "container:EmpiricalDataset"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Proportion",
+      "@type": "rdfs:Class",
+      "label": "Proportion",
+      "comment": "A part considered in relation to the whole.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Proportionality_(mathematics)",
+      "subClassOf": [
+        "stats:Statistic", "container:EmpiricalDataset"
+      ],
+      "status": "testing"
+    },
+
+    {
       "@id": "stats:Correlation",
       "@type": "rdfs:Class",
       "label": "Correlation coefficient",
@@ -209,18 +244,6 @@ exports.stats = {
       "seeAlso": "http://en.wikipedia.org/wiki/Covariate",
       "range": "xsd:string",
       "domain": "stats:Correlation",
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:Proportion",
-      "@type": "rdfs:Class",
-      "label": "Proportion",
-      "comment": "A part considered in relation to the whole.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Proportionality_(mathematics)",
-      "subClassOf": [
-        "stats:Statistic"
-      ],
       "status": "testing"
     },
 
@@ -300,7 +323,7 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:ndata",
+      "@id": "stats:nData",
       "@type": "rdf:Property",
       "label": "Number of data points",
       "comment": "Number of data points.",
@@ -310,7 +333,7 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:nparameters",
+      "@id": "stats:nParameters",
       "@type": "rdf:Property",
       "label": "Number of parameters",
       "comment": "Number of parameters.",
@@ -409,7 +432,7 @@ exports.stats = {
       "label": "OptimizationTrajectory",
       "comment": "Optimization Trajectory.",
       "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
-      "range": "ctnr:SimulatedDataset",
+      "range": "container:SimulatedDataset",
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
@@ -472,7 +495,7 @@ exports.stats = {
       "label": "MCMC trace",
       "comment": "MCMC Trace.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
-      "range": "ctnr:SimulatedDataset",
+      "range": "container:SimulatedDataset",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -490,7 +513,7 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:ANOVARow",
+      "@id": "stats:AnovaRow",
       "@type": "rdfs:Class",
       "label": "ANOVA row",
       "comment": "Row of an ANOVA",
@@ -508,7 +531,7 @@ exports.stats = {
       "comment": "Error stratum of an ANOVA",
       "seeAlso": "http://en.wikipedia.org/wiki/Anova",
       "range": "xsd:string",
-      "domain": "stats:ANOVARow",
+      "domain": "stats:AnovaRow",
       "status": "testing"
     },
     {
@@ -518,7 +541,7 @@ exports.stats = {
       "comment": "Sum of squares.",
       "seeAlso": "http://en.wikipedia.org/wiki/Partition_of_sums_of_squares",
       "range": "xsd:float",
-      "domain": "stats:ANOVARow",
+      "domain": "stats:AnovaRow",
       "status": "testing"
     },
     {
@@ -528,7 +551,7 @@ exports.stats = {
       "comment": "Mean of squares.",
       "seeAlso": "http://en.wikipedia.org/wiki/Partition_of_sums_of_squares",
       "range": "xsd:float",
-      "domain": "stats:ANOVARow",
+      "domain": "stats:AnovaRow",
       "status": "testing"
     },
     {
@@ -538,30 +561,30 @@ exports.stats = {
       "comment": "sum of Squares Type.",
       "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
       "range": "xsd:float",
-      "domain": "stats:ANOVARow",
+      "domain": "stats:AnovaRow",
       "status": "testing"
     },
 
     {
-      "@id": "stats:ANOVAResidual",
+      "@id": "stats:AnovaResidual",
       "@type": "rdfs:Class",
       "label": "ANOVA residual",
       "comment": "Difference between the observed value and the estimated function value.",
       "seeAlso": "http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics",
       "subClassOf": [
-        "stats:ANOVARow"
+        "stats:AnovaRow"
       ],
       "status": "testing"
     },    
 
     {
-      "@id": "stats:ANOVAFactor",
+      "@id": "stats:AnovaFactor",
       "@type": "rdfs:Class",
       "label": "ANOVA factor",
       "comment":"Process inputs an investigator manipulates to cause a change in the output.",
       "seeAlso": "http://en.wikipedia.org/wiki/Factor_analysis",
       "subClassOf": [
-        "stats:ANOVARow"
+        "stats:AnovaRow"
       ],
       "status": "testing"
     },    
