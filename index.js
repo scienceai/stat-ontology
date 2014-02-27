@@ -40,6 +40,58 @@ exports.stats = {
   "defines": [
 
     {
+      "@id": "stats:ProbabilityDistribution",
+      "@type": "rdfs:Class",
+      "label": "Probability distribution",
+      "comment":"Probability distribution.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },    
+    {
+      "@id": "stats:distributionType",
+      "@type": "rdf:Property",
+      "label": "Distribution type",
+      "comment":"Distribution type.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
+      "range": "xsd:string",
+      "domain": "stats:ProbabilityDistribution",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:distributionParameter",
+      "@type": "rdf:Property",
+      "label": "Distribution parameter",
+      "comment":"Distribution parameter.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
+      "range": "stats:Parameter",
+      "domain": "stats:ProbabilityDistribution",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:distributionParameter",
+      "@type": "rdf:Property",
+      "label": "Distribution parameter",
+      "comment":"Distribution parameter.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
+      "range": "stats:Parameter",
+      "domain": "stats:ProbabilityDistribution",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:sampleSequence",
+      "@type": "rdf:Property",
+      "label": "Sample sequence",
+      "comment":"Sample sequence.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
+      "range": "stats:SampleSequence",
+      "domain": "stats:ProbabilityDistribution",
+      "status": "testing"
+    },
+
+    {
       "@id": "stats:StatisticalTest",
       "@type": "rdfs:Class",
       "label": "Statistical test",
@@ -120,6 +172,16 @@ exports.stats = {
       "label": "Number of degrees of freedom",
       "comment": "The number of degrees of freedom is the number of values in the final calculation of a statistic that are free to vary.",
       "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
+      "range": "xsd:float",
+      "domain": "stats:StatisticalTest",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:alternative",
+      "@type": "rdf:Property",
+      "label": "Alternative",
+      "comment": "Indication on whether the alternative test hypothesis is two-sided, greater or lower than the null.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_hypothesis_testing",
       "range": "xsd:integer",
       "domain": "stats:StatisticalTest",
       "status": "testing"
@@ -131,7 +193,7 @@ exports.stats = {
       "label": "Number of degrees of freedom",
       "comment": "Number of degrees of freedom of the numerator.",
       "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
-      "range": "xsd:integer",
+      "range": "xsd:float",
       "domain": "stats:FTest",
       "status": "testing"
     },
@@ -141,8 +203,114 @@ exports.stats = {
       "label": "Number of degrees of freedom",
       "comment": "Number of degrees of freedom of the denominator.",
       "seeAlso": "http://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)",
-      "range": "xsd:integer",
+      "range": "xsd:float",
       "domain": "stats:FTest",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Mean",
+      "@type": "rdfs:Class",
+      "label": "Mean",
+      "comment": "Mean.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Mean",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:StandardDeviation",
+      "@type": "rdfs:Class",
+      "label": "Standard deviation",
+      "comment": "Standard deviation.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Standard_deviation",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Median",
+      "@type": "rdfs:Class",
+      "label": "Median",
+      "comment": "Median.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Median",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Min",
+      "@type": "rdfs:Class",
+      "label": "Min",
+      "comment": "Min.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Min",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Max",
+      "@type": "rdfs:Class",
+      "label": "Max",
+      "comment": "Max.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Max",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Quantile",
+      "@type": "rdfs:Class",
+      "label": "Quantile",
+      "comment": "Quantile.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Quantile",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+     {
+      "@id": "stats:percentile",
+      "@type": "rdf:Property",
+      "label": "Percentile",
+      "comment": "Percentile.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Percentile",
+      "range": "xsd:float",
+      "domain": "stats:Quantile",
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Proportion",
+      "@type": "rdfs:Class",
+      "label": "Proportion",
+      "comment": "A part considered in relation to the whole.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Proportionality_(mathematics)",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Correlation",
+      "@type": "rdfs:Class",
+      "label": "Correlation coefficient",
+      "comment": "Correlation refers to any of a broad class of statistical relationships involving dependence.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Correlation",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
       "status": "testing"
     },
 
@@ -150,7 +318,7 @@ exports.stats = {
       "@id": "stats:Statistic",
       "@type": "rdfs:Class",
       "label": "Statistic",
-      "comment": "Function of the sample.",
+      "comment": "Statistic.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -158,6 +326,36 @@ exports.stats = {
       "status": "testing"
     },
 
+    {
+      "@id": "stats:empiricalData",
+      "@type": "rdf:Property",
+      "label": "Empirical data",
+      "comment": "Empirical data.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Data",
+      "range": "ctnr:EmpiricalData",
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:confidenceInterval",
+      "@type": "rdf:Property",
+      "label": "Confidence interval",
+      "comment": "Confidence interval.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Confidence_interval",
+      "range": ["stats:Quantile","stats:Statistic"],
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:variable",
+      "@type": "rdf:Property",
+      "label": "Variable",
+      "comment": "Variables that were used to compute this statistic.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Data",
+      "range": "stats:Variable",
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
     {
       "@id": "stats:statisticalTest",
       "@type": "rdf:Property",
@@ -176,74 +374,6 @@ exports.stats = {
       "seeAlso": "http://en.wikipedia.org/wiki/Standard_error",
       "range": "xsd:float",
       "domain": "stats:Statistic",
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:RawStatistics",
-      "@type": "rdfs:Class",
-      "label": "Raw Statistics",
-      "comment": "Raw Statistics.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Data",
-      "subClassOf": [
-        "stats:Statistic", "container:EmpiricalDataset"
-      ],
-      "status": "testing"
-    },
-    {
-      "@id": "stats:ContingencyTable",
-      "@type": "rdfs:Class",
-      "label": "ContingencyTable",
-      "comment": "Table that displays the (multivariate) frequency distribution of the variables.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Contingency_table",
-      "subClassOf": [
-        "stats:Statistic", "container:EmpiricalDataset"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:Proportion",
-      "@type": "rdfs:Class",
-      "label": "Proportion",
-      "comment": "A part considered in relation to the whole.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Proportionality_(mathematics)",
-      "subClassOf": [
-        "stats:Statistic", "container:EmpiricalDataset"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:Correlation",
-      "@type": "rdfs:Class",
-      "label": "Correlation coefficient",
-      "comment": "Correlation refers to any of a broad class of statistical relationships involving dependence.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Correlation",
-      "subClassOf": [
-        "stats:Statistic"
-      ],
-      "status": "testing"
-    },
-
-    {
-      "@id": "stats:covariate1",
-      "@type": "rdf:Property",
-      "label": "First covariate",
-      "comment": "Variable that is observed.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Covariate",
-      "range": "xsd:string",
-      "domain": "stats:Correlation",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:covariate2",
-      "@type": "rdf:Property",
-      "label": "Second covariate",
-      "comment": "Variable that is observed.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Covariate",
-      "range": "xsd:string",
-      "domain": "stats:Correlation",
       "status": "testing"
     },
 
@@ -276,6 +406,16 @@ exports.stats = {
       "comment": "Model parameter.",
       "seeAlso": "http://en.wikipedia.org/wiki/Model_parameter",
       "range": "stats:Parameter",
+      "domain": "stats:StatisticalModel",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:modelVariable",
+      "@type": "rdf:Property",
+      "label": "Model variable",
+      "comment": "Model variable.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Variable",
+      "range": "stats:Variable",
       "domain": "stats:StatisticalModel",
       "status": "testing"
     },
@@ -342,6 +482,16 @@ exports.stats = {
       "domain": "stats:ModelFit",
       "status": "testing"
     },
+    {
+      "@id": "stats:fitResidual",
+      "@type": "rdf:Property",
+      "label": "Residual",
+      "comment": "Residual.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Residual",
+      "range": "stats:Statistic",
+      "domain": "stats:ModelFit",
+      "status": "testing"
+    },
 
 
     {
@@ -356,6 +506,16 @@ exports.stats = {
       "status": "testing"
     },
 
+    {
+      "@id": "stats:fTest",
+      "@type": "rdf:Property",
+      "label": "F test",
+      "comment": "Overall F test: does any predictor of the model significantly explain the data?",
+      "seeAlso": "http://en.wikipedia.org/wiki/F-test",
+      "range": "stats:Ftest",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
     {
       "@id": "stats:aic",
       "@type": "rdf:Property",
@@ -437,12 +597,22 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:anova",
+      "@id": "stats:anovaFactor",
       "@type": "rdf:Property",
-      "label": "Analysis of variance",
-      "comment": "Analysis of variance.",
+      "label": "Analysis of variance factor",
+      "comment": "Analysis of variance factor.",
       "seeAlso": "http://en.wikipedia.org/wiki/Analysis_of_variance",
-      "range": "stats:Statistic",
+      "range": "stats:AnovaFactor",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:anovaResidual",
+      "@type": "rdf:Property",
+      "label": "Analysis of variance residual",
+      "comment": "Analysis of variance residual.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Analysis_of_variance",
+      "range": "stats:AnovaResidual",
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
@@ -465,6 +635,16 @@ exports.stats = {
       "label": "Deviance Information Criterion",
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://en.wikipedia.org/wiki/Deviance_information_criterion",
+      "range": "xsd:float",
+      "domain": "stats:MCMC",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:rhat",
+      "@type": "rdf:Property",
+      "label": "R hat",
+      "comment": "Potential scale reduction factor on split chains (at convergence, Rhat=1).",
+      "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
       "range": "xsd:float",
       "domain": "stats:MCMC",
       "status": "testing"
@@ -555,27 +735,36 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:sumOfSquaresType",
+      "@id": "stats:loglik",
       "@type": "rdf:Property",
-      "label": "Sum of Squares Type",
-      "comment": "sum of Squares Type.",
-      "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
+      "label": "Log-likelihood",
+      "comment": "Log-likelihood.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Likelihood_function",
       "range": "xsd:float",
       "domain": "stats:AnovaRow",
       "status": "testing"
     },
 
     {
-      "@id": "stats:AnovaResidual",
-      "@type": "rdfs:Class",
-      "label": "ANOVA residual",
-      "comment": "Difference between the observed value and the estimated function value.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics",
-      "subClassOf": [
-        "stats:AnovaRow"
-      ],
+      "@id": "stats:sumOfSquaresType",
+      "@type": "rdf:Property",
+      "label": "Sum of Squares Type",
+      "comment": "sum of Squares Type.",
+      "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
+      "range": "xsd:float",
+      "domain": "stats:AnovaFactor",
       "status": "testing"
-    },    
+    },
+    {
+      "@id": "stats:factorIndex",
+      "@type": "rdf:Property",
+      "label": "Factor index",
+      "comment": "Factor index.",
+      "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
+      "range": "xsd:integer",
+      "domain": "stats:AnovaFactor",
+      "status": "testing"
+    },
 
     {
       "@id": "stats:AnovaFactor",
@@ -583,6 +772,17 @@ exports.stats = {
       "label": "ANOVA factor",
       "comment":"Process inputs an investigator manipulates to cause a change in the output.",
       "seeAlso": "http://en.wikipedia.org/wiki/Factor_analysis",
+      "subClassOf": [
+        "stats:AnovaRow"
+      ],
+      "status": "testing"
+    },    
+    {
+      "@id": "stats:AnovaResidual",
+      "@type": "rdfs:Class",
+      "label": "ANOVA residual",
+      "comment": "Difference between the observed value and the estimated function value.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics",
       "subClassOf": [
         "stats:AnovaRow"
       ],
@@ -668,16 +868,6 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:selectedModel",
-      "@type": "rdf:Property",
-      "label": "Selected model",
-      "comment":"Selected model.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
-      "range": "xsd:string",
-      "domain": "stats:ModelSelection",
-      "status": "testing"
-    },
-    {
       "@id": "stats:selectionCriterion",
       "@type": "rdf:Property",
       "label": "Selection criterion",
@@ -688,58 +878,7 @@ exports.stats = {
       "status": "testing"
     },
 
-    {
-      "@id": "stats:ProbabilityDistribution",
-      "@type": "rdfs:Class",
-      "label": "Probability distribution",
-      "comment":"Probability distribution.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
-      "subClassOf": [
-        "schema:Intangible"
-      ],
-      "status": "testing"
-    },    
-    {
-      "@id": "stats:distributionType",
-      "@type": "rdf:Property",
-      "label": "Distribution type",
-      "comment":"Distribution type.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
-      "range": "xsd:string",
-      "domain": "stats:ProbabilityDistribution",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:distributionParameter",
-      "@type": "rdf:Property",
-      "label": "Distribution parameter",
-      "comment":"Distribution parameter.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
-      "range": "stats:Parameter",
-      "domain": "stats:ProbabilityDistribution",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:distributionParameter",
-      "@type": "rdf:Property",
-      "label": "Distribution parameter",
-      "comment":"Distribution parameter.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
-      "range": "stats:Parameter",
-      "domain": "stats:ProbabilityDistribution",
-      "status": "testing"
-    },
 
-    {
-      "@id": "stats:sampleSequence",
-      "@type": "rdf:Property",
-      "label": "Sample sequence",
-      "comment":"Sample sequence.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
-      "range": "stats:SampleSequence",
-      "domain": "stats:ProbabilityDistribution",
-      "status": "testing"
-    },
 
     {
       "@id": "stats:Parameter",
@@ -752,7 +891,6 @@ exports.stats = {
       ],
       "status": "testing"
     },
-
     {
       "@id": "stats:prior",
       "@type": "rdf:Property",
@@ -781,6 +919,28 @@ exports.stats = {
       "seeAlso": "http://en.wikipedia.org/wiki/Formula",
       "range": "xsd:string",
       "domain": ["stats:Parameter", "stats:StatisticalModel"],
+      "status": "testing"
+    },
+
+    {
+      "@id": "stats:Variable",
+      "@type": "rdfs:Class",
+      "label": "Variable",
+      "comment":"Variable",
+      "seeAlso": "http://en.wikipedia.org/wiki/Variable",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:isCategorical",
+      "@type": "rdf:Property",
+      "label": "Is categorical",
+      "comment":"Is this variable categorical?",
+      "seeAlso": "http://en.wikipedia.org/wiki/Categorical_variable",
+      "range": "xsd:boolean",
+      "domain": "stats:Variable",
       "status": "testing"
     }
 
