@@ -40,6 +40,17 @@ exports.stats = {
   "defines": [
 
     {
+      "@id": "stats:method",
+      "@type": "rdf:Property",
+      "label": "Method",
+      "comment":"Method.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
+      "range": "schema:Thing",
+      "domain": "schema:Intangible",
+      "status": "testing"
+    },
+
+    {
       "@id": "stats:ProbabilityDistribution",
       "@type": "rdfs:Class",
       "label": "Probability distribution",
@@ -49,7 +60,7 @@ exports.stats = {
         "schema:Intangible"
       ],
       "status": "testing"
-    },    
+    },
     {
       "@id": "stats:distributionType",
       "@type": "rdf:Property",
@@ -145,7 +156,7 @@ exports.stats = {
       ],
       "status": "testing"
     },
-    
+
     {
       "@id": "stats:testStatistic",
       "@type": "rdf:Property",
@@ -291,6 +302,18 @@ exports.stats = {
     },
 
     {
+      "@id": "stats:MeanDifference",
+      "@type": "rdfs:Class",
+      "label": "Mean difference",
+      "comment": "Mean difference.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Mean_difference",
+      "subClassOf": [
+        "schema:QuantitativeValue"
+      ],
+      "status": "testing"
+    },
+
+    {
       "@id": "stats:Proportion",
       "@type": "rdfs:Class",
       "label": "Proportion",
@@ -376,6 +399,29 @@ exports.stats = {
       "domain": "stats:Statistic",
       "status": "testing"
     },
+
+    {
+      "@id": "stats:MultipleComparison",
+      "@type": "rdfs:Class",
+      "label": "Multiple comparisons",
+      "comment": "Formalization of relationships between variables in the form of mathematical equations.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Multiple_comparisons_problem",
+      "subClassOf": [
+        "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:comparison",
+      "@type": "rdf:Property",
+      "label": "Comparison",
+      "comment": "Comparison.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Statistical_inference",
+      "range": "stats:Statistic",
+      "domain": "stats:MultipleComparison",
+      "status": "testing"
+    },
+
 
     {
       "@id": "stats:StatisticalModel",
@@ -547,6 +593,16 @@ exports.stats = {
       "status": "testing"
     },
     {
+      "@id": "stats:deviance",
+      "@type": "rdf:Property",
+      "label": "Deviance",
+      "comment": "Generalization of the idea of using the sum of squared residuals in ordinary least squares to cases where model-fitting is achieved by maximum likelihood.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Deviance_(statistics)",
+      "range": "xsd:float",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
+    {
       "@id": "stats:fitnessCriterion",
       "@type": "rdf:Property",
       "label": "fit Criterion",
@@ -646,16 +702,6 @@ exports.stats = {
       "comment": "Potential scale reduction factor on split chains (at convergence, Rhat=1).",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
       "range": "xsd:float",
-      "domain": "stats:MCMC",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:mcmcAlgorithm",
-      "@type": "rdf:Property",
-      "label": "MCMC algorithm",
-      "comment": "MCMC algorithm.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo",
-      "range": "schema:Thing",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -776,7 +822,7 @@ exports.stats = {
         "stats:AnovaRow"
       ],
       "status": "testing"
-    },    
+    },
     {
       "@id": "stats:AnovaResidual",
       "@type": "rdfs:Class",
@@ -787,7 +833,7 @@ exports.stats = {
         "stats:AnovaRow"
       ],
       "status": "testing"
-    },    
+    },
 
     {
       "@id": "stats:GeneralizedLinearModel",
@@ -802,10 +848,20 @@ exports.stats = {
     },
 
     {
-      "@id": "stats:modelFamily",
+      "@id": "stats:family",
       "@type": "rdf:Property",
-      "label": "Test parameters",
+      "label": "Family",
       "comment":"Family of a generalized linear model.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Generalized_linear_model",
+      "range": "xsd:string",
+      "domain": "stats:GeneralizedLinearModel",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:link",
+      "@type": "rdf:Property",
+      "label": "Link",
+      "comment":"Link of a generalized linear model.",
       "seeAlso": "http://en.wikipedia.org/wiki/Generalized_linear_model",
       "range": "xsd:string",
       "domain": "stats:GeneralizedLinearModel",
