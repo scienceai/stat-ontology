@@ -62,16 +62,6 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:distributionType",
-      "@type": "rdf:Property",
-      "label": "Distribution type",
-      "comment":"Distribution type.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
-      "range": "xsd:string",
-      "domain": "stats:ProbabilityDistribution",
-      "status": "testing"
-    },
-    {
       "@id": "stats:distributionParameter",
       "@type": "rdf:Property",
       "label": "Distribution parameter",
@@ -97,7 +87,7 @@ exports.stats = {
       "label": "Sample sequence",
       "comment":"Sample sequence.",
       "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
-      "range": "stats:SampleSequence",
+      "range": "schema:url",
       "domain": "stats:ProbabilityDistribution",
       "status": "testing"
     },
@@ -452,16 +442,6 @@ exports.stats = {
       "comment": "Model parameter.",
       "seeAlso": "http://en.wikipedia.org/wiki/Model_parameter",
       "range": "stats:Parameter",
-      "domain": "stats:StatisticalModel",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:modelVariable",
-      "@type": "rdf:Property",
-      "label": "Model variable",
-      "comment": "Model variable.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Variable",
-      "range": "stats:Variable",
       "domain": "stats:StatisticalModel",
       "status": "testing"
     },
@@ -977,6 +957,27 @@ exports.stats = {
       "domain": ["stats:Parameter", "stats:StatisticalModel"],
       "status": "testing"
     },
+    {
+      "@id": "stats:contrast",
+      "@type": "rdf:Property",
+      "label": "Contrast",
+      "comment":"Contrast",
+      "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
+      "range": "xsd:integer",
+      "domain": "stats:Parameter",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:reference",
+      "@type": "rdf:Property",
+      "label": "reference",
+      "comment":"Is this row the reference?",
+      "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
+      "range": "xsd:boolean",
+      "domain": "stats:Parameter",
+      "status": "testing"
+    },
+
 
     {
       "@id": "stats:Variable",
@@ -985,7 +986,7 @@ exports.stats = {
       "comment":"Variable",
       "seeAlso": "http://en.wikipedia.org/wiki/Variable",
       "subClassOf": [
-        "schema:QuantitativeValue"
+        "schema:QuantitativeValue","stats:StatisticalModel"
       ],
       "status": "testing"
     },
