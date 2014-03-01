@@ -366,7 +366,7 @@ exports.stats = {
       "comment": "Variables that were used to compute this statistic.",
       "seeAlso": "http://en.wikipedia.org/wiki/Data",
       "range": "stats:Variable",
-      "domain": "stats:Statistic",
+      "domain": ["stats:Statistic","stats:StatisticalModel"],
       "status": "testing"
     },
     {
@@ -964,7 +964,7 @@ exports.stats = {
       "comment":"Contrast",
       "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
       "range": "xsd:integer",
-      "domain": "stats:Parameter",
+      "domain": ["stats:Parameter","stats:Variable"],
       "status": "testing"
     },
     {
@@ -999,7 +999,18 @@ exports.stats = {
       "range": "xsd:boolean",
       "domain": "stats:Variable",
       "status": "testing"
+    },
+    {
+      "@id": "stats:level",
+      "@type": "rdf:Property",
+      "label": "Level",
+      "comment":"Levels of a categorical variable",
+      "seeAlso": "http://en.wikipedia.org/wiki/Categorical_variable",
+      "range": "xsd:boolean",
+      "domain": "stats:Variable",
+      "status": "testing"
     }
+
 
   ],
   "@type": "owl:Ontology",
