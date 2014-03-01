@@ -82,10 +82,10 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:sampleSequence",
+      "@id": "stats:randomSamples",
       "@type": "rdf:Property",
-      "label": "Sample sequence",
-      "comment":"Sample sequence.",
+      "label": "Random samples",
+      "comment":"Random samples.",
       "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
       "range": "schema:url",
       "domain": "stats:ProbabilityDistribution",
@@ -366,7 +366,7 @@ exports.stats = {
       "comment": "Variables that were used to compute this statistic.",
       "seeAlso": "http://en.wikipedia.org/wiki/Data",
       "range": "stats:Variable",
-      "domain": ["stats:Statistic","stats:StatisticalModel"],
+      "domain": ["stats:Statistic"],
       "status": "testing"
     },
     {
@@ -425,6 +425,26 @@ exports.stats = {
       "status": "testing"
     },
 
+    {
+      "@id": "stats:modelVariable",
+      "@type": "rdf:Property",
+      "label": "Model variable",
+      "comment": "Variables at stake in the model.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Variable",
+      "range": "stats:Variable",
+      "domain": ["stats:StatisticalModel"],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:modelFormula",
+      "@type": "rdf:Property",
+      "label": "Formula",
+      "comment":"Model formula.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Formula",
+      "range": "xsd:string",
+      "domain": ["stats:StatisticalModel"],
+      "status": "testing"
+    },
     {
       "@id": "stats:modelFit",
       "@type": "rdf:Property",
@@ -954,7 +974,7 @@ exports.stats = {
       "comment":"Formula.",
       "seeAlso": "http://en.wikipedia.org/wiki/Formula",
       "range": "xsd:string",
-      "domain": ["stats:Parameter", "stats:StatisticalModel"],
+      "domain": ["stats:Parameter"],
       "status": "testing"
     },
     {
@@ -963,8 +983,8 @@ exports.stats = {
       "label": "Contrast",
       "comment":"Contrast",
       "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
-      "range": "xsd:integer",
-      "domain": ["stats:Parameter","stats:Variable"],
+      "range": "schema:QuantitativeValue",
+      "domain": ["stats:Parameter"],
       "status": "testing"
     },
     {
@@ -986,7 +1006,7 @@ exports.stats = {
       "comment":"Variable",
       "seeAlso": "http://en.wikipedia.org/wiki/Variable",
       "subClassOf": [
-        "schema:QuantitativeValue","stats:StatisticalModel"
+        "schema:QuantitativeValue"
       ],
       "status": "testing"
     },
@@ -1008,6 +1028,16 @@ exports.stats = {
       "seeAlso": "http://en.wikipedia.org/wiki/Categorical_variable",
       "range": "xsd:boolean",
       "domain": "stats:Variable",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:factorContrast",
+      "@type": "rdf:Property",
+      "label": "factorContrast",
+      "comment":"factorContrast",
+      "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
+      "range": "schema:QuantitativeValue",
+      "domain": ["stats:Variable"],
       "status": "testing"
     }
 
