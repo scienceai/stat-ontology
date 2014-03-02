@@ -43,8 +43,8 @@ exports.stats = {
       "@id": "stats:method",
       "@type": "rdf:Property",
       "label": "Method",
-      "comment":"Method.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Probability_distribution",
+      "comment":"Description of the methodology.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Methodology",
       "range": "schema:Thing",
       "domain": "schema:Intangible",
       "status": "testing"
@@ -213,7 +213,7 @@ exports.stats = {
       "@id": "stats:Mean",
       "@type": "rdfs:Class",
       "label": "Mean",
-      "comment": "Mean.",
+      "comment": "Measure of the central tendency either of a probability distribution or of the random variable characterized by that distribution.",
       "seeAlso": "http://en.wikipedia.org/wiki/Mean",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -225,7 +225,7 @@ exports.stats = {
       "@id": "stats:StandardDeviation",
       "@type": "rdfs:Class",
       "label": "Standard deviation",
-      "comment": "Standard deviation.",
+      "comment": "The standard deviation shows how much variation or dispersion from the average exists.",
       "seeAlso": "http://en.wikipedia.org/wiki/Standard_deviation",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -237,7 +237,7 @@ exports.stats = {
       "@id": "stats:Median",
       "@type": "rdfs:Class",
       "label": "Median",
-      "comment": "Median.",
+      "comment": "The median is the numerical value separating the higher half of a data sample, a population, or a probability distribution, from the lower half..",
       "seeAlso": "http://en.wikipedia.org/wiki/Median",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -249,7 +249,7 @@ exports.stats = {
       "@id": "stats:Min",
       "@type": "rdfs:Class",
       "label": "Min",
-      "comment": "Min.",
+      "comment": "Smallest value.",
       "seeAlso": "http://en.wikipedia.org/wiki/Min",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -261,7 +261,7 @@ exports.stats = {
       "@id": "stats:Max",
       "@type": "rdfs:Class",
       "label": "Max",
-      "comment": "Max.",
+      "comment": "Highest value.",
       "seeAlso": "http://en.wikipedia.org/wiki/Max",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -273,7 +273,7 @@ exports.stats = {
       "@id": "stats:Quantile",
       "@type": "rdfs:Class",
       "label": "Quantile",
-      "comment": "Quantile.",
+      "comment": "The kth q-quantile is the data value where the cumulative distribution function crosses k/q.",
       "seeAlso": "http://en.wikipedia.org/wiki/Quantile",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -294,7 +294,7 @@ exports.stats = {
     {
       "@id": "stats:MeanDifference",
       "@type": "rdfs:Class",
-      "label": "Mean difference",
+      "label": "Difference of means.",
       "comment": "Mean difference.",
       "seeAlso": "http://en.wikipedia.org/wiki/Mean_difference",
       "subClassOf": [
@@ -318,7 +318,7 @@ exports.stats = {
     {
       "@id": "stats:Correlation",
       "@type": "rdfs:Class",
-      "label": "Correlation coefficient",
+      "label": "Correlation",
       "comment": "Correlation refers to any of a broad class of statistical relationships involving dependence.",
       "seeAlso": "http://en.wikipedia.org/wiki/Correlation",
       "subClassOf": [
@@ -331,7 +331,7 @@ exports.stats = {
       "@id": "stats:Statistic",
       "@type": "rdfs:Class",
       "label": "Statistic",
-      "comment": "Statistic.",
+      "comment": "A statistic (singular) is a single measure of some attribute of a sample.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistic",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -343,9 +343,9 @@ exports.stats = {
       "@id": "stats:empiricalData",
       "@type": "rdf:Property",
       "label": "Empirical data",
-      "comment": "Empirical data.",
+      "comment": "Link to the underlying empirical data.",
       "seeAlso": "http://en.wikipedia.org/wiki/Data",
-      "range": "ctnr:EmpiricalData",
+      "range": "xsd:url",
       "domain": "stats:Statistic",
       "status": "testing"
     },
@@ -353,7 +353,7 @@ exports.stats = {
       "@id": "stats:confidenceInterval",
       "@type": "rdf:Property",
       "label": "Confidence interval",
-      "comment": "Confidence interval.",
+      "comment": "Type of interval estimate of a population parameter. It is used to indicate the reliability of an estimate.",
       "seeAlso": "http://en.wikipedia.org/wiki/Confidence_interval",
       "range": ["stats:Quantile","stats:Statistic"],
       "domain": "stats:Statistic",
@@ -363,7 +363,7 @@ exports.stats = {
       "@id": "stats:variable",
       "@type": "rdf:Property",
       "label": "Variable",
-      "comment": "Variables that were used to compute this statistic.",
+      "comment": "Variables that were considered to compute this statistic.",
       "seeAlso": "http://en.wikipedia.org/wiki/Data",
       "range": "stats:Variable",
       "domain": ["stats:Statistic"],
@@ -394,7 +394,7 @@ exports.stats = {
       "@id": "stats:MultipleComparison",
       "@type": "rdfs:Class",
       "label": "Multiple comparisons",
-      "comment": "Formalization of relationships between variables in the form of mathematical equations.",
+      "comment": "Consideration of a set of statistical inferences simultaneously.",
       "seeAlso": "http://en.wikipedia.org/wiki/Multiple_comparisons_problem",
       "subClassOf": [
         "schema:Intangible"
@@ -532,7 +532,7 @@ exports.stats = {
       "@id": "stats:fitResidual",
       "@type": "rdf:Property",
       "label": "Residual",
-      "comment": "Residual.",
+      "comment": "Statistics summarising the residuals of a model fit.",
       "seeAlso": "http://en.wikipedia.org/wiki/Residual",
       "range": "stats:Statistic",
       "domain": "stats:ModelFit",
@@ -566,7 +566,7 @@ exports.stats = {
       "@id": "stats:aic",
       "@type": "rdf:Property",
       "label": "Akaike Information Criterion",
-      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "comment": "The Akaike Information Criterion is a measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://en.wikipedia.org/wiki/Akaike_information_criterion",
       "range": "xsd:float",
       "domain": "stats:FitnessOptimization",
@@ -576,7 +576,7 @@ exports.stats = {
       "@id": "stats:aicc",
       "@type": "rdf:Property",
       "label": "Corrected Akaike Information Criterion",
-      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "comment": "Akaike information criterion corrected for the finite sample size.",
       "seeAlso": "http://en.wikipedia.org/wiki/Akaike_information_criterion",
       "range": "xsd:float",
       "domain": "stats:FitnessOptimization",
@@ -586,7 +586,7 @@ exports.stats = {
       "@id": "stats:bic",
       "@type": "rdf:Property",
       "label": "Bayesian Information Criterion",
-      "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
+      "comment": "The Bayesian Information Criterion is a measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://en.wikipedia.org/wiki/Bayesian_information_criterion",
       "range": "xsd:float",
       "domain": "stats:FitnessOptimization",
@@ -615,20 +615,10 @@ exports.stats = {
     {
       "@id": "stats:optimalParameter",
       "@type": "rdf:Property",
-      "label": "optimal Parameter",
-      "comment": "optimal Parameter.",
+      "label": "Optimal Parameter",
+      "comment": "Parameters that have adapted to optimize a fitness criterion.",
       "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
       "range": "stats:Parameter",
-      "domain": "stats:FitnessOptimization",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:optimalCriterionValue",
-      "@type": "rdf:Property",
-      "label": "Optimal criterion value.",
-      "comment": "Optimal criterion value.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
-      "range": "xsd:float",
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
@@ -648,7 +638,7 @@ exports.stats = {
       "label": "OptimizationTrajectory",
       "comment": "Optimization Trajectory.",
       "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
-      "range": "container:SimulatedDataset",
+      "range": "xsd:url",
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
@@ -719,9 +709,9 @@ exports.stats = {
       "@id": "stats:mcmcTrace",
       "@type": "rdf:Property",
       "label": "MCMC trace",
-      "comment": "MCMC Trace.",
+      "comment": "Trace of a Monte Carlo Markov Chain",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
-      "range": "container:SimulatedDataset",
+      "range": "xsd:url",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -795,7 +785,7 @@ exports.stats = {
       "@id": "stats:sumOfSquaresType",
       "@type": "rdf:Property",
       "label": "Sum of Squares Type",
-      "comment": "sum of Squares Type.",
+      "comment": "Approach taken to calculate the sum of squares of an ANOVA.",
       "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
       "range": "xsd:float",
       "domain": "stats:AnovaFactor",
@@ -805,7 +795,7 @@ exports.stats = {
       "@id": "stats:factorIndex",
       "@type": "rdf:Property",
       "label": "Factor index",
-      "comment": "Factor index.",
+      "comment": "Index of a factor in an analysis of variance.",
       "seeAlso": "http://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/",
       "range": "xsd:integer",
       "domain": "stats:AnovaFactor",
@@ -872,7 +862,7 @@ exports.stats = {
       "@id": "stats:HierarchicalBayesianModel",
       "@type": "rdfs:Class",
       "label": "Hierarchical Bayesian Model",
-      "comment":"Hierarchical Bayesian Model",
+      "comment":"Probabilistic graphical model (a type of statistical model) that represents a set of random variables and their conditional dependencies via a directed acyclic graph (DAG).",
       "seeAlso": "http://en.wikipedia.org/wiki/Hierarchical_Bayesian_model",
       "subClassOf": [
         "stats:StatisticalModel"
@@ -884,7 +874,7 @@ exports.stats = {
       "@id": "stats:StateSpaceModel",
       "@type": "rdfs:Class",
       "label": "State Space Model",
-      "comment":"State Space Model",
+      "comment":"Class of probabilistic graphical model (Koller and Friedman, 2009) that describes the probabilistic dependence between the latent state variable and the observed measurement.",
       "seeAlso": "http://www.scholarpedia.org/article/State_space_model",
       "subClassOf": [
         "stats:StatisticalModel"
@@ -896,7 +886,7 @@ exports.stats = {
       "@id": "stats:ModelSelection",
       "@type": "rdfs:Class",
       "label": "Model Selection",
-      "comment": "Model Selection.",
+      "comment": "Model selection is the task of selecting a statistical model from a set of candidate models, given data.",
       "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
       "subClassOf": [
         "schema:Intangible"
@@ -909,7 +899,7 @@ exports.stats = {
       "label": "Model set",
       "comment":"Model set.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
-      "range": "xsd:string",
+      "range": "xsd:url",
       "domain": "stats:ModelSelection",
       "status": "testing"
     },
@@ -919,7 +909,7 @@ exports.stats = {
       "label": "Selected model",
       "comment":"Selected model.",
       "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
-      "range": "xsd:string",
+      "range": "xsd:url",
       "domain": "stats:ModelSelection",
       "status": "testing"
     },
@@ -940,7 +930,7 @@ exports.stats = {
       "@id": "stats:Parameter",
       "@type": "rdfs:Class",
       "label": "Parameter",
-      "comment":"Parameter",
+      "comment":"Characteristic, feature, or measurable factor that can help in defining a particular system.",
       "seeAlso": "http://en.wikipedia.org/wiki/Parameter",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -953,7 +943,7 @@ exports.stats = {
       "label": "Prior distribution",
       "comment":"Prior distribution.",
       "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "range": "xsd:string",
+      "range": "xsd:url",
       "domain": "stats:Parameter",
       "status": "testing"
     },
@@ -981,29 +971,18 @@ exports.stats = {
       "@id": "stats:contrast",
       "@type": "rdf:Property",
       "label": "Contrast",
-      "comment":"Contrast",
+      "comment":"Linear combination of factor level means",
       "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
       "range": "schema:QuantitativeValue",
       "domain": ["stats:Parameter"],
       "status": "testing"
     },
-    {
-      "@id": "stats:reference",
-      "@type": "rdf:Property",
-      "label": "reference",
-      "comment":"Is this row the reference?",
-      "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
-      "range": "xsd:boolean",
-      "domain": "stats:Parameter",
-      "status": "testing"
-    },
-
 
     {
       "@id": "stats:Variable",
       "@type": "rdfs:Class",
       "label": "Variable",
-      "comment":"Variable",
+      "comment":"Mathematical quantity having no fixed quantitative value.",
       "seeAlso": "http://en.wikipedia.org/wiki/Variable",
       "subClassOf": [
         "schema:QuantitativeValue"
@@ -1034,9 +1013,9 @@ exports.stats = {
       "@id": "stats:factorContrast",
       "@type": "rdf:Property",
       "label": "factorContrast",
-      "comment":"factorContrast",
+      "comment":"Linear combination of factor level means",
       "seeAlso": "http://en.wikipedia.org/wiki/Contrast_(statistics)",
-      "range": "schema:QuantitativeValue",
+      "range": "xsd:string",
       "domain": ["stats:Variable"],
       "status": "testing"
     }
