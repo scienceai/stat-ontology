@@ -87,7 +87,7 @@ exports.stats = {
       "label": "Random samples",
       "comment":"Random samples.",
       "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
-      "range": "schema:string",
+      "range": "xsd:string",
       "domain": "stats:ProbabilityDistribution",
       "status": "testing"
     },
