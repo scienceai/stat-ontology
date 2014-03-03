@@ -87,7 +87,7 @@ exports.stats = {
       "label": "Random samples",
       "comment":"Random samples.",
       "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
-      "range": "schema:url",
+      "range": "schema:string",
       "domain": "stats:ProbabilityDistribution",
       "status": "testing"
     },
@@ -100,6 +100,26 @@ exports.stats = {
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_hypothesis_testing",
       "subClassOf": [
         "schema:Intangible"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:CorTest",
+      "@type": "rdfs:Class",
+      "label": "Correlation test",
+      "comment": "Test for association/correlation between paired samples.",
+      "subClassOf": [
+        "stats:StatisticalTest"
+      ],
+      "status": "testing"
+    },
+    {
+      "@id": "stats:PropTest",
+      "@type": "rdfs:Class",
+      "label": "Proportion test",
+      "comment": "Test of equal or given proportions.",
+      "subClassOf": [
+        "stats:StatisticalTest"
       ],
       "status": "testing"
     },
@@ -339,16 +359,6 @@ exports.stats = {
       "status": "testing"
     },
 
-    {
-      "@id": "stats:empiricalData",
-      "@type": "rdf:Property",
-      "label": "Empirical data",
-      "comment": "Link to the underlying empirical data.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Data",
-      "range": "xsd:url",
-      "domain": "stats:Statistic",
-      "status": "testing"
-    },
     {
       "@id": "stats:confidenceInterval",
       "@type": "rdf:Property",
@@ -633,16 +643,6 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:optimizationTrajectory",
-      "@type": "rdf:Property",
-      "label": "OptimizationTrajectory",
-      "comment": "Optimization Trajectory.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
-      "range": "xsd:url",
-      "domain": "stats:FitnessOptimization",
-      "status": "testing"
-    },
-    {
       "@id": "stats:anovaFactor",
       "@type": "rdf:Property",
       "label": "Analysis of variance factor",
@@ -702,16 +702,6 @@ exports.stats = {
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
       "range": "stats:Statistic",
-      "domain": "stats:MCMC",
-      "status": "testing"
-    },
-    {
-      "@id": "stats:mcmcTrace",
-      "@type": "rdf:Property",
-      "label": "MCMC trace",
-      "comment": "Trace of a Monte Carlo Markov Chain",
-      "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
-      "range": "xsd:url",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -899,7 +889,7 @@ exports.stats = {
       "label": "Model set",
       "comment":"Model set.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
-      "range": "xsd:url",
+      "range": "xsd:string",
       "domain": "stats:ModelSelection",
       "status": "testing"
     },
@@ -909,7 +899,7 @@ exports.stats = {
       "label": "Selected model",
       "comment":"Selected model.",
       "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
-      "range": "xsd:url",
+      "range": "xsd:string",
       "domain": "stats:ModelSelection",
       "status": "testing"
     },
@@ -943,7 +933,7 @@ exports.stats = {
       "label": "Prior distribution",
       "comment":"Prior distribution.",
       "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "range": "xsd:url",
+      "range": "xsd:string",
       "domain": "stats:Parameter",
       "status": "testing"
     },
