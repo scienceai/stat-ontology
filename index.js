@@ -87,7 +87,7 @@ exports.stats = {
       "label": "Random samples",
       "comment":"Random samples.",
       "seeAlso": "http://en.wikipedia.org/wiki/Sample_(statistics)",
-      "range": "xsd:string",
+      "range": "schema:Thing",
       "domain": "stats:ProbabilityDistribution",
       "status": "testing"
     },
@@ -662,6 +662,16 @@ exports.stats = {
       "domain": "stats:FitnessOptimization",
       "status": "testing"
     },
+    {
+      "@id": "stats:optimizationTrajectory",
+      "@type": "rdf:Property",
+      "label": "Optimization trajectory.",
+      "comment": "Optimization trajectory.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Maximum_likelihood",
+      "range": "schema:Thing",
+      "domain": "stats:FitnessOptimization",
+      "status": "testing"
+    },
 
     {
       "@id": "stats:MCMC",
@@ -702,6 +712,16 @@ exports.stats = {
       "comment": "Measure of the relative quality of a statistical model, for a given set of data.",
       "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
       "range": "stats:Statistic",
+      "domain": "stats:MCMC",
+      "status": "testing"
+    },
+    {
+      "@id": "stats:mcmcTrace",
+      "@type": "rdf:Property",
+      "label": "MCMC trace",
+      "comment": "Sequence of values taken by the MCMC.",
+      "seeAlso": "http://cran.r-project.org/web/packages/coda/coda.pdf",
+      "range": "schema:Thing",
       "domain": "stats:MCMC",
       "status": "testing"
     },
@@ -889,7 +909,7 @@ exports.stats = {
       "label": "Model set",
       "comment":"Model set.",
       "seeAlso": "http://en.wikipedia.org/wiki/Statistical_model",
-      "range": "xsd:string",
+      "range": "schema:Thing",
       "domain": "stats:ModelSelection",
       "status": "testing"
     },
@@ -899,7 +919,7 @@ exports.stats = {
       "label": "Selected model",
       "comment":"Selected model.",
       "seeAlso": "http://en.wikipedia.org/wiki/Model_selection",
-      "range": "xsd:string",
+      "range": "schema:Thing",
       "domain": "stats:ModelSelection",
       "status": "testing"
     },
