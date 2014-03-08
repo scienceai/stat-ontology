@@ -11,4 +11,4 @@ This ontology is a work in progress: comments and contributions are welcome.
 Usage
 ========
 
-Follow [this link](http://standardanalytics.io/stats) for a series of JSONLD and RDFa examples.
+Follow [this link](http://standardanalytics.io/getting-started) for a series of JSONLD and RDFa examples.
