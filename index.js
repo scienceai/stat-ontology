@@ -370,16 +370,6 @@ exports.stats = {
       "status": "testing"
     },
     {
-      "@id": "stats:variable",
-      "@type": "rdf:Property",
-      "label": "Variable",
-      "comment": "Variables that were considered to compute this statistic.",
-      "seeAlso": "http://en.wikipedia.org/wiki/Data",
-      "range": "stats:Variable",
-      "domain": ["stats:Statistic"],
-      "status": "testing"
-    },
-    {
       "@id": "stats:statisticalTest",
       "@type": "rdf:Property",
       "label": "Statistical test",
@@ -953,7 +943,7 @@ exports.stats = {
       "label": "Prior distribution",
       "comment":"Prior distribution.",
       "seeAlso": "http://en.wikipedia.org/wiki/Prior_probability",
-      "range": "xsd:string",
+      "range": "schema:Thing",
       "domain": "stats:Parameter",
       "status": "testing"
     },
