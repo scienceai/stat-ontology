@@ -1,6 +1,6 @@
 {
   "name": "standard-analytics-terms",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Standard Analytics Statistical Ontology",
   "main": "index.js",
   "repository": {
