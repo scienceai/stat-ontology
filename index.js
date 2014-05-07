@@ -389,6 +389,17 @@ exports.stats = {
       "domain": "stats:Statistic",
       "status": "testing"
     },
+    {
+      "@id": "stats:variable",
+      "@type": "rdf:Property",
+      "label": "Variable",
+      "comment": "Variables considered to compute this statistic.",
+      "seeAlso": "http://en.wikipedia.org/wiki/Variable_(mathematics)",
+      "range": "xsd:string",
+      "domain": "stats:Statistic",
+      "status": "testing"
+    },
+
 
     {
       "@id": "stats:MultipleComparison",
